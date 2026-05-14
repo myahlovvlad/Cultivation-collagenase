@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false">
+  <model metaid="meta_aspergillus_sydowii_gem_lite_v1" id="aspergillus_sydowii_gem_lite_v1" name="Aspergillus sydowii GEM-lite v1" fbc:strict="true">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>description: GEM-lite proxy model for process decision support, not a curated genome-scale model.</p>
+        <p>primary_accession: GCF_001890705.1</p>
+        <p>protease_peptidase: Протеазы и пептидазы: 1702 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+        <p>secretory_system: Секреторный и внеклеточный аппарат: 251 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+        <p>transport: Транспортеры и пермеазы: 7155 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+        <p>carbon_redox_metabolism: Центральный углеродный обмен, redox и дыхание: 10141 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+        <p>secondary_metabolism: Вторичный метаболизм: 6317 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+        <p>cell_cycle: Маркеры клеточного цикла и деления: 754 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+        <p>collagenase_boundary: Прямая аннотация collagenase не найдена в GBFF/protein; реакция продукта является прокси коллагенолитического/протеазного пула.</p>
+      </html>
+    </notes>
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="e" name="extracellular" constant="true"/>
+      <compartment id="c" name="cytosol" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="M_molasses_proxy_e" name="Molasses/glucose carbon proxy" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_organic_nitrogen_proxy_e" name="Peptone organic nitrogen proxy" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_collagen_substrate_e" name="Collagen substrate proxy" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_o2_e" name="Oxygen" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_co2_e" name="Carbon dioxide" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_collagenolytic_product_e" name="Secreted protease/collagenolytic product proxy" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_molasses_proxy_c" name="Molasses/glucose carbon proxy" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_organic_nitrogen_proxy_c" name="Peptone organic nitrogen proxy" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_collagen_substrate_c" name="Collagen substrate proxy" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_o2_c" name="Oxygen" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_co2_c" name="Carbon dioxide" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_collagenolytic_product_c" name="Secreted protease/collagenolytic product proxy" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_biomass_c" name="Biomass proxy" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_secondary_metabolism_stress_c" name="Secondary metabolism/stress drain proxy" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="-1000" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_ub" value="1000" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_0_bound" value="0" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="minus_inf" value="-INF" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="plus_inf" value="INF" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_EX_molasses_proxy_e_lower_bound" value="-10" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_EX_organic_nitrogen_proxy_e_lower_bound" value="-10" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_EX_collagen_substrate_e_lower_bound" value="-2" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_EX_o2_e_lower_bound" value="-20" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_ATPM_PROXY_lower_bound" value="0.05" units="mmol_per_gDW_per_hr" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="R_EX_molasses_proxy_e" name="Molasses/glucose exchange" reversible="true" fast="false" fbc:lowerFluxBound="R_EX_molasses_proxy_e_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Центральный углеродный обмен, redox и дыхание: 10141 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_molasses_proxy_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_EX_organic_nitrogen_proxy_e" name="Organic nitrogen exchange" reversible="true" fast="false" fbc:lowerFluxBound="R_EX_organic_nitrogen_proxy_e_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Транспортеры и пермеазы: 7155 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_organic_nitrogen_proxy_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_EX_collagen_substrate_e" name="Collagen substrate exchange" reversible="true" fast="false" fbc:lowerFluxBound="R_EX_collagen_substrate_e_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Протеазы и пептидазы: 1702 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_collagen_substrate_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_EX_o2_e" name="Oxygen exchange" reversible="true" fast="false" fbc:lowerFluxBound="R_EX_o2_e_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Центральный углеродный обмен, redox и дыхание: 10141 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_o2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_EX_co2_e" name="Carbon dioxide exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_co2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_EX_collagenolytic_product_e" name="Collagenolytic product exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Секреторный и внеклеточный аппарат: 251 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_collagenolytic_product_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_T_molasses" name="Carbon uptake transport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Транспортеры и пермеазы: 7155 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_molasses_proxy_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_molasses_proxy_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_T_organic_nitrogen" name="Organic nitrogen uptake transport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Транспортеры и пермеазы: 7155 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_organic_nitrogen_proxy_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_organic_nitrogen_proxy_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_T_collagen" name="Collagen substrate uptake/proteolysis proxy" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Протеазы и пептидазы: 1702 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_collagen_substrate_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_collagen_substrate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_T_o2" name="Oxygen uptake transport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_o2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_o2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_T_co2" name="Carbon dioxide transport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_T_product" name="Secreted product export" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Секреторный и внеклеточный аппарат: 251 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_collagenolytic_product_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_collagenolytic_product_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_BIOMASS_ASYD" sboTerm="SBO:0000629" id="R_BIOMASS_ASYD" name="Biomass synthesis proxy" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Proxy biomass equation; coefficients are v1 assumptions pending curation.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_molasses_proxy_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_organic_nitrogen_proxy_c" stoichiometry="0.35" constant="true"/>
+          <speciesReference species="M_o2_c" stoichiometry="0.85" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_biomass_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="0.45" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="meta_R_PRODUCT_COLLAGENOLYTIC_POOL" sboTerm="SBO:0000176" id="R_PRODUCT_COLLAGENOLYTIC_POOL" name="Secreted collagenolytic/protease product proxy" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Протеазы и пептидазы: 1702 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_molasses_proxy_c" stoichiometry="0.42" constant="true"/>
+          <speciesReference species="M_organic_nitrogen_proxy_c" stoichiometry="0.45" constant="true"/>
+          <speciesReference species="M_collagen_substrate_c" stoichiometry="0.25" constant="true"/>
+          <speciesReference species="M_o2_c" stoichiometry="0.3" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_collagenolytic_product_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="0.2" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_DM_biomass_c" name="Biomass demand" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Маркеры клеточного цикла и деления: 754 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_biomass_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+      <reaction id="R_ATPM_PROXY" name="Maintenance/stress carbon and oxygen drain" reversible="false" fast="false" fbc:lowerFluxBound="R_ATPM_PROXY_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_molasses_proxy_c" stoichiometry="0.18" constant="true"/>
+          <speciesReference species="M_o2_c" stoichiometry="0.08" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="0.1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_SECONDARY_METABOLISM_DRAIN" name="Secondary metabolism/stress drain" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Вторичный метаболизм: 6317 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_molasses_proxy_c" stoichiometry="0.22" constant="true"/>
+          <speciesReference species="M_organic_nitrogen_proxy_c" stoichiometry="0.08" constant="true"/>
+          <speciesReference species="M_o2_c" stoichiometry="0.12" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_secondary_metabolism_stress_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="0.08" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_DM_secondary_stress_c" name="Secondary/stress demand" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>evidence: Вторичный метаболизм: 6317 строк доказательств по ключевым словам; 5 источников; уверенность high.</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_secondary_metabolism_stress_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+    </listOfReactions>
+    <fbc:listOfObjectives fbc:activeObjective="obj">
+      <fbc:objective fbc:id="obj" fbc:type="maximize">
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective fbc:reaction="R_DM_biomass_c" fbc:coefficient="1"/>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+    </fbc:listOfObjectives>
+  </model>
+</sbml>

@@ -1,0 +1,28 @@
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.playwright-mcp/
+
+# Local virtual environments and editor state
+.venv/
+venv/
+.env
+.env.*
+.idea/
+.vscode/
+
+# Local databases and generated runtime files
+*.db
+*.sqlite
+*.sqlite3
+
+# Large NCBI/raw omics datasets. Recreate with the OMICS pipeline or unzip the dataset locally.
+*.zip
+BioCult-KB_Aspergillus_sydowii/Aspergillus sydowii_dataset_all data_NCBI/
+BioCult-KB_Aspergillus_sydowii/web_app/data/omics/aspergillus_sydowii/raw/
+
+# Test/report caches
+htmlcov/
+.coverage
+coverage.xml

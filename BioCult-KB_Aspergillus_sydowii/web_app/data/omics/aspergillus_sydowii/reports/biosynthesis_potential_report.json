@@ -1,0 +1,498 @@
+{
+  "created_at_utc": "2026-05-14T15:11:48.919668+00:00",
+  "scanned_file_count": 17,
+  "categories": {
+    "protease_peptidase": {
+      "keyword_set": [
+        "protease",
+        "peptidase",
+        "proteinase",
+        "metalloprotease",
+        "serine protease"
+      ],
+      "evidence_file_count": 7,
+      "evidence": [
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">lcl|NW_024467859.1_cds_XP_040707072.1_26 [gene=kexA] [locus_tag=ASPSYDRAFT_25358] [db_xref=InterPro:IPR001563,JGIDB:Aspsy1_25358,GeneID:63760225] [protein=serine-type carboxypeptidase kexA] [protein_id=XP_040707072.1] [location=complement(join(115613..116974,117039..117399,117455..117642))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707091.1_45 [locus_tag=ASPSYDRAFT_141609] [db_xref=InterPro:IPR002610,JGIDB:Aspsy1_141609,GeneID:63757237] [protein=rhomboid protease PCP1] [protein_id=XP_040707091.1] [location=complement(join(163452..163707,163765..163939,164010..164343,164395..164498,164556..165402))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707163.1_117 [locus_tag=ASPSYDRAFT_25440] [db_xref=InterPro:IPR001818,JGIDB:Aspsy1_25440,GeneID:63760236] [protein=zinc metalloprotease] [protein_id=XP_040707163.1] [location=complement(join(315280..315657,315736..315964,316036..316238,316291..316524))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707395.1_349 [locus_tag=ASPSYDRAFT_245766] [db_xref=InterPro:IPR007863,InterPro:IPR011765,JGIDB:Aspsy1_245766,GeneID:63760213] [protein=mitochondrial-processing protease subunit alpha] [protein_id=XP_040707395.1] [location=complement(join(940593..942203,942281..942385))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707479.1_433 [locus_tag=ASPSYDRAFT_140149] [db_xref=InterPro:IPR013536,JGIDB:Aspsy1_140149,GeneID:63757092] [protein=putative zinc metalloproteinase] [protein_id=XP_040707479.1] [location=complement(1154123..1155178)] [gbkey=CDS]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/product=\"serine-type carboxypeptidase kexA\"",
+            "/product=\"serine-type carboxypeptidase kexA\"",
+            "/product=\"rhomboid protease PCP1\"",
+            "/product=\"rhomboid protease PCP1\"",
+            "/product=\"zinc metalloprotease\""
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "NW_024467859.1\tRefSeq\tmRNA\t115613\t117642\t.\t-\t.\tID=rna-XM_040844152.1;Parent=gene-ASPSYDRAFT_25358;Dbxref=GeneID:63760225,GenBank:XM_040844152.1;Name=XM_040844152.1;end_range=117642,.;gbkey=mRNA;gene=kexA;locus_tag=ASPSYDRAFT_25358;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;partial=true;product=serine-type carboxypeptidase kexA;start_range=.,115613;transcript_id=XM_040844152.1",
+            "NW_024467859.1\tRefSeq\texon\t117455\t117642\t.\t-\t.\tID=exon-XM_040844152.1-1;Parent=rna-XM_040844152.1;Dbxref=GeneID:63760225,GenBank:XM_040844152.1;end_range=117642,.;gbkey=mRNA;gene=kexA;locus_tag=ASPSYDRAFT_25358;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;partial=true;product=serine-type carboxypeptidase kexA;transcript_id=XM_040844152.1",
+            "NW_024467859.1\tRefSeq\texon\t117039\t117399\t.\t-\t.\tID=exon-XM_040844152.1-2;Parent=rna-XM_040844152.1;Dbxref=GeneID:63760225,GenBank:XM_040844152.1;gbkey=mRNA;gene=kexA;locus_tag=ASPSYDRAFT_25358;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;partial=true;product=serine-type carboxypeptidase kexA;transcript_id=XM_040844152.1",
+            "NW_024467859.1\tRefSeq\texon\t115613\t116974\t.\t-\t.\tID=exon-XM_040844152.1-3;Parent=rna-XM_040844152.1;Dbxref=GeneID:63760225,GenBank:XM_040844152.1;gbkey=mRNA;gene=kexA;locus_tag=ASPSYDRAFT_25358;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;partial=true;product=serine-type carboxypeptidase kexA;start_range=.,115613;transcript_id=XM_040844152.1",
+            "NW_024467859.1\tRefSeq\tCDS\t117455\t117642\t.\t-\t0\tID=cds-XP_040707072.1;Parent=rna-XM_040844152.1;Dbxref=GeneID:63760225,InterPro:IPR001563,JGIDB:Aspsy1_25358,GenBank:XP_040707072.1;Name=XP_040707072.1;gbkey=CDS;gene=kexA;locus_tag=ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;product=serine-type carboxypeptidase kexA;protein_id=XP_040707072.1"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "match_count_capped": 30,
+          "examples": [
+            ">XP_040696217.1 M14 family metallopeptidase [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696369.1 pepsin-like aspartic protease [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696413.1 CAAX prenyl protease RCE1 [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696453.1 O-sialoglycoprotein endopeptidase [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696757.1 S9 family peptidase [Aspergillus sydowii CBS 593.65]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">XM_040839900.1 Aspergillus sydowii CBS 593.65 S24/S26 family peptidase (ASPSYDRAFT_109552), partial mRNA",
+            ">XM_040840154.1 Aspergillus sydowii CBS 593.65 zinc metalloprotease (ASPSYDRAFT_1164865), partial mRNA",
+            ">XM_040840284.1 Aspergillus sydowii CBS 593.65 cysteine protease ATG4 (ASPSYDRAFT_1173712), partial mRNA",
+            ">XM_040840300.1 Aspergillus sydowii CBS 593.65 pitrilysin family metalloprotease cym1 (cym1), partial mRNA",
+            ">XM_040840423.1 Aspergillus sydowii CBS 593.65 serine protease (ASPSYDRAFT_121615), partial mRNA"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/note=\"GO_function: GO:4185 - serine carboxypeptidase",
+            "GO_function: GO:4222 - metalloendopeptidase activity;",
+            "metalloendopeptidase activity [PMID 8270];",
+            "/note=\"GO_function: GO:1509; cysteine-type endopeptidase",
+            "/note=\"GO_function: GO:8235; X-Pro aminopeptidase activity"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "KV878582.1\tGenbank\tCDS\t117455\t117642\t.\t-\t0\tID=cds-OJJ63266.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;Dbxref=InterPro:IPR001563,JGIDB:Aspsy1_25358,NCBI_GP:OJJ63266.1;Name=OJJ63266.1;Ontology_term=GO:4185,GO:6508;gbkey=CDS;go_function=serine carboxypeptidase activity |4185||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;product=hypothetical protein;protein_id=OJJ63266.1",
+            "KV878582.1\tGenbank\tCDS\t117039\t117399\t.\t-\t1\tID=cds-OJJ63266.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;Dbxref=InterPro:IPR001563,JGIDB:Aspsy1_25358,NCBI_GP:OJJ63266.1;Name=OJJ63266.1;Ontology_term=GO:4185,GO:6508;gbkey=CDS;go_function=serine carboxypeptidase activity |4185||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;product=hypothetical protein;protein_id=OJJ63266.1",
+            "KV878582.1\tGenbank\tCDS\t115613\t116974\t.\t-\t0\tID=cds-OJJ63266.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;Dbxref=InterPro:IPR001563,JGIDB:Aspsy1_25358,NCBI_GP:OJJ63266.1;Name=OJJ63266.1;Ontology_term=GO:4185,GO:6508;gbkey=CDS;go_function=serine carboxypeptidase activity |4185||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25358;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25358;product=hypothetical protein;protein_id=OJJ63266.1",
+            "KV878582.1\tGenbank\tCDS\t316291\t316524\t.\t-\t0\tID=cds-OJJ63357.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;Dbxref=InterPro:IPR001818,JGIDB:Aspsy1_25440,NCBI_GP:OJJ63357.1;Name=OJJ63357.1;Ontology_term=GO:5578,GO:4222,GO:6508;gbkey=CDS;go_component=proteinaceous extracellular matrix |5578||;go_function=metalloendopeptidase activity |4222||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25440;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;product=hypothetical protein;protein_id=OJJ63357.",
+            "KV878582.1\tGenbank\tCDS\t316036\t316238\t.\t-\t0\tID=cds-OJJ63357.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;Dbxref=InterPro:IPR001818,JGIDB:Aspsy1_25440,NCBI_GP:OJJ63357.1;Name=OJJ63357.1;Ontology_term=GO:5578,GO:4222,GO:6508;gbkey=CDS;go_component=proteinaceous extracellular matrix |5578||;go_function=metalloendopeptidase activity |4222||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25440;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;product=hypothetical protein;protein_id=OJJ63357."
+          ]
+        }
+      ]
+    },
+    "collagenase_candidate": {
+      "keyword_set": [
+        "collagenase",
+        "collagenolytic",
+        "collagen"
+      ],
+      "evidence_file_count": 0,
+      "evidence": []
+    },
+    "secretory_system": {
+      "keyword_set": [
+        "signal peptide",
+        "secreted",
+        "secretion",
+        "extracellular"
+      ],
+      "evidence_file_count": 7,
+      "evidence": [
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "match_count_capped": 22,
+          "examples": [
+            ">lcl|NW_024467859.1_cds_XP_040707894.1_848 [locus_tag=ASPSYDRAFT_38772] [db_xref=InterPro:IPR000026,JGIDB:Aspsy1_38772,GeneID:63761849] [protein=extracellular guanyl-specific ribonuclease RntA] [protein_id=XP_040707894.1] [location=join(2251242..2251256,2251310..2251684)] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040708519.1_1473 [locus_tag=ASPSYDRAFT_84710] [db_xref=InterPro:IPR010310,JGIDB:Aspsy1_84710,GeneID:63767466] [protein=WXG100 family type VII secretion target] [protein_id=XP_040708519.1] [location=complement(join(3815788..3815827,3815880..3815983,3816036..3816242))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040708938.1_1892 [locus_tag=ASPSYDRAFT_372617] [db_xref=InterPro:IPR002018,JGIDB:Aspsy1_372617,GeneID:63761592] [protein=putative extracellular lipase] [protein_id=XP_040708938.1] [location=complement(join(4851882..4853132,4853203..4853652))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040709080.1_2034 [locus_tag=ASPSYDRAFT_140493] [db_xref=InterPro:IPR000743,JGIDB:Aspsy1_140493,GeneID:63757129] [protein=putative extracellular exo-polygalacturonase] [protein_id=XP_040709080.1] [location=join(5203631..5204019,5204086..5204893)] [gbkey=CDS]",
+            ">lcl|NW_024467860.1_cds_XP_040706091.1_2781 [locus_tag=ASPSYDRAFT_120312] [db_xref=InterPro:IPR014044,JGIDB:Aspsy1_120312,GeneID:63756478] [protein=putative extracellular SCP domain protein Pry1] [partial=5',3'] [protein_id=XP_040706091.1] [location=join(<1598715..1598927,1599038..>1599205)] [gbkey=CDS]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/product=\"extracellular guanyl-specific ribonuclease RntA\"",
+            "/product=\"extracellular guanyl-specific ribonuclease RntA\"",
+            "/product=\"WXG100 family type VII secretion target\"",
+            "/product=\"WXG100 family type VII secretion target\"",
+            "/product=\"putative extracellular lipase\""
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "NW_024467859.1\tRefSeq\tmRNA\t2251121\t2252051\t.\t+\t.\tID=rna-XM_040845776.1;Parent=gene-ASPSYDRAFT_38772;Dbxref=GeneID:63761849,GenBank:XM_040845776.1;Name=XM_040845776.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_38772;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_38772;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA38772;product=extracellular guanyl-specific ribonuclease RntA;transcript_id=XM_040845776.1",
+            "NW_024467859.1\tRefSeq\texon\t2251121\t2251256\t.\t+\t.\tID=exon-XM_040845776.1-1;Parent=rna-XM_040845776.1;Dbxref=GeneID:63761849,GenBank:XM_040845776.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_38772;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_38772;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA38772;product=extracellular guanyl-specific ribonuclease RntA;transcript_id=XM_040845776.1",
+            "NW_024467859.1\tRefSeq\texon\t2251310\t2252051\t.\t+\t.\tID=exon-XM_040845776.1-2;Parent=rna-XM_040845776.1;Dbxref=GeneID:63761849,GenBank:XM_040845776.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_38772;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_38772;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA38772;product=extracellular guanyl-specific ribonuclease RntA;transcript_id=XM_040845776.1",
+            "NW_024467859.1\tRefSeq\tCDS\t2251242\t2251256\t.\t+\t0\tID=cds-XP_040707894.1;Parent=rna-XM_040845776.1;Dbxref=GeneID:63761849,InterPro:IPR000026,JGIDB:Aspsy1_38772,GenBank:XP_040707894.1;Name=XP_040707894.1;gbkey=CDS;locus_tag=ASPSYDRAFT_38772;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA38772;product=extracellular guanyl-specific ribonuclease RntA;protein_id=XP_040707894.1",
+            "NW_024467859.1\tRefSeq\tCDS\t2251310\t2251684\t.\t+\t0\tID=cds-XP_040707894.1;Parent=rna-XM_040845776.1;Dbxref=GeneID:63761849,InterPro:IPR000026,JGIDB:Aspsy1_38772,GenBank:XP_040707894.1;Name=XP_040707894.1;gbkey=CDS;locus_tag=ASPSYDRAFT_38772;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA38772;product=extracellular guanyl-specific ribonuclease RntA;protein_id=XP_040707894.1"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "match_count_capped": 22,
+          "examples": [
+            ">XP_040697125.1 putative extracellular lipase [Aspergillus sydowii CBS 593.65]",
+            ">XP_040697135.1 putative extracellular exo-polygalacturonase [Aspergillus sydowii CBS 593.65]",
+            ">XP_040697330.1 WXG100 family type VII secretion target [Aspergillus sydowii CBS 593.65]",
+            ">XP_040697833.1 putative extracellular serine-rich protein [Aspergillus sydowii CBS 593.65]",
+            ">XP_040697909.1 putative extracellular rhamnogalacturonase [Aspergillus sydowii CBS 593.65]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "match_count_capped": 22,
+          "examples": [
+            ">XM_040840405.1 Aspergillus sydowii CBS 593.65 putative extracellular SCP domain protein Pry1 (ASPSYDRAFT_120312), partial mRNA",
+            ">XM_040841056.1 Aspergillus sydowii CBS 593.65 putative extracellular exo-polygalacturonase (ASPSYDRAFT_140493), partial mRNA",
+            ">XM_040841754.1 Aspergillus sydowii CBS 593.65 extracellular developmental signal biosynthesis protein FluG (fluG), partial mRNA",
+            ">XM_040843850.1 Aspergillus sydowii CBS 593.65 putative extracellular cellulase CelA/allergen Asp F7-like (ASPSYDRAFT_204329), partial mRNA",
+            ">XM_040843914.1 Aspergillus sydowii CBS 593.65 putative extracellular endoglucanase (ASPSYDRAFT_207051), mRNA"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "match_count_capped": 16,
+          "examples": [
+            "/note=\"GO_component: GO:5578 - proteinaceous extracellular",
+            "/note=\"GO_component: GO:5576 - extracellular region\"",
+            "/note=\"GO_component: GO:5576 - extracellular region;",
+            "/note=\"GO_component: GO:5576 - extracellular region;",
+            "/note=\"GO_component: GO:5576 - extracellular region;"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "KV878582.1\tGenbank\tCDS\t316291\t316524\t.\t-\t0\tID=cds-OJJ63357.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;Dbxref=InterPro:IPR001818,JGIDB:Aspsy1_25440,NCBI_GP:OJJ63357.1;Name=OJJ63357.1;Ontology_term=GO:5578,GO:4222,GO:6508;gbkey=CDS;go_component=proteinaceous extracellular matrix |5578||;go_function=metalloendopeptidase activity |4222||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25440;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;product=hypothetical protein;protein_id=OJJ63357.",
+            "KV878582.1\tGenbank\tCDS\t316036\t316238\t.\t-\t0\tID=cds-OJJ63357.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;Dbxref=InterPro:IPR001818,JGIDB:Aspsy1_25440,NCBI_GP:OJJ63357.1;Name=OJJ63357.1;Ontology_term=GO:5578,GO:4222,GO:6508;gbkey=CDS;go_component=proteinaceous extracellular matrix |5578||;go_function=metalloendopeptidase activity |4222||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25440;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;product=hypothetical protein;protein_id=OJJ63357.",
+            "KV878582.1\tGenbank\tCDS\t315736\t315964\t.\t-\t1\tID=cds-OJJ63357.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;Dbxref=InterPro:IPR001818,JGIDB:Aspsy1_25440,NCBI_GP:OJJ63357.1;Name=OJJ63357.1;Ontology_term=GO:5578,GO:4222,GO:6508;gbkey=CDS;go_component=proteinaceous extracellular matrix |5578||;go_function=metalloendopeptidase activity |4222||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25440;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;product=hypothetical protein;protein_id=OJJ63357.",
+            "KV878582.1\tGenbank\tCDS\t315280\t315657\t.\t-\t0\tID=cds-OJJ63357.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;Dbxref=InterPro:IPR001818,JGIDB:Aspsy1_25440,NCBI_GP:OJJ63357.1;Name=OJJ63357.1;Ontology_term=GO:5578,GO:4222,GO:6508;gbkey=CDS;go_component=proteinaceous extracellular matrix |5578||;go_function=metalloendopeptidase activity |4222||;go_process=proteolysis |6508||;locus_tag=ASPSYDRAFT_25440;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA25440;product=hypothetical protein;protein_id=OJJ63357.",
+            "KV878583.1\tGenbank\tCDS\t538226\t539653\t.\t-\t0\tID=cds-OJJ61895.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA143996;Dbxref=InterPro:IPR009730,JGIDB:Aspsy1_143996,NCBI_GP:OJJ61895.1;Name=OJJ61895.1;Ontology_term=GO:5576;gbkey=CDS;go_component=extracellular region |5576||;locus_tag=ASPSYDRAFT_143996;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA143996;product=hypothetical protein;protein_id=OJJ61895.1"
+          ]
+        }
+      ]
+    },
+    "transport": {
+      "keyword_set": [
+        "transporter",
+        "permease",
+        "abc transporter",
+        "major facilitator"
+      ],
+      "evidence_file_count": 7,
+      "evidence": [
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">lcl|NW_024467859.1_cds_XP_040707108.1_62 [locus_tag=ASPSYDRAFT_83375] [db_xref=InterPro:IPR000620,JGIDB:Aspsy1_83375,GeneID:63767289] [protein=DMT family transporter] [protein_id=XP_040707108.1] [location=complement(join(198441..198729,198805..199457,199527..199874))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707134.1_88 [locus_tag=ASPSYDRAFT_138285] [db_xref=JGIDB:Aspsy1_138285,GeneID:63756898] [protein=putative vacuolar transporter chaperon Vtc1] [protein_id=XP_040707134.1] [location=complement(join(248554..248891,248959..248992))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707149.1_103 [locus_tag=ASPSYDRAFT_190517] [db_xref=InterPro:IPR005828,JGIDB:Aspsy1_190517,GeneID:63759707] [protein=putative MFS maltose transporter] [protein_id=XP_040707149.1] [location=complement(join(286460..287040,287107..287413,287463..287711,287765..288247))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707152.1_106 [locus_tag=ASPSYDRAFT_138860] [db_xref=InterPro:IPR004841,JGIDB:Aspsy1_138860,GeneID:63756953] [protein=putative GABA permease] [protein_id=XP_040707152.1] [location=complement(join(292676..293155,293215..293544,293608..294005,294065..294147,294195..294284,294334..294357,294410..294480,294531..294635))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707180.1_134 [locus_tag=ASPSYDRAFT_140641] [db_xref=InterPro:IPR005365,JGIDB:Aspsy1_140641,GeneID:63757140] [protein=nitrogen permease regulator 3 family protein] [protein_id=XP_040707180.1] [location=join(360323..361397,361452..362854)] [gbkey=CDS]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/product=\"DMT family transporter\"",
+            "/product=\"DMT family transporter\"",
+            "/product=\"putative vacuolar transporter chaperon Vtc1\"",
+            "/product=\"putative vacuolar transporter chaperon Vtc1\"",
+            "/product=\"putative MFS maltose transporter\""
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "NW_024467859.1\tRefSeq\tmRNA\t198441\t199874\t.\t-\t.\tID=rna-XM_040851216.1;Parent=gene-ASPSYDRAFT_83375;Dbxref=GeneID:63767289,GenBank:XM_040851216.1;Name=XM_040851216.1;end_range=199874,.;gbkey=mRNA;locus_tag=ASPSYDRAFT_83375;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83375;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83375;partial=true;product=DMT family transporter;start_range=.,198441;transcript_id=XM_040851216.1",
+            "NW_024467859.1\tRefSeq\texon\t199527\t199874\t.\t-\t.\tID=exon-XM_040851216.1-1;Parent=rna-XM_040851216.1;Dbxref=GeneID:63767289,GenBank:XM_040851216.1;end_range=199874,.;gbkey=mRNA;locus_tag=ASPSYDRAFT_83375;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83375;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83375;partial=true;product=DMT family transporter;transcript_id=XM_040851216.1",
+            "NW_024467859.1\tRefSeq\texon\t198805\t199457\t.\t-\t.\tID=exon-XM_040851216.1-2;Parent=rna-XM_040851216.1;Dbxref=GeneID:63767289,GenBank:XM_040851216.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_83375;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83375;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83375;partial=true;product=DMT family transporter;transcript_id=XM_040851216.1",
+            "NW_024467859.1\tRefSeq\texon\t198441\t198729\t.\t-\t.\tID=exon-XM_040851216.1-3;Parent=rna-XM_040851216.1;Dbxref=GeneID:63767289,GenBank:XM_040851216.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_83375;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83375;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83375;partial=true;product=DMT family transporter;start_range=.,198441;transcript_id=XM_040851216.1",
+            "NW_024467859.1\tRefSeq\tCDS\t199527\t199874\t.\t-\t0\tID=cds-XP_040707108.1;Parent=rna-XM_040851216.1;Dbxref=GeneID:63767289,InterPro:IPR000620,JGIDB:Aspsy1_83375,GenBank:XP_040707108.1;Name=XP_040707108.1;gbkey=CDS;locus_tag=ASPSYDRAFT_83375;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83375;product=DMT family transporter;protein_id=XP_040707108.1"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "match_count_capped": 30,
+          "examples": [
+            ">XP_040695736.1 chromate transporter [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695796.1 potassium ion transporter [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695903.1 tellurite-resistance/dicarboxylate transporter family protein [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695996.1 CorA family magnesium transporter [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696002.1 MFS transporter [Aspergillus sydowii CBS 593.65]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">XM_040839721.1 Aspergillus sydowii CBS 593.65 purine-cytosine permease family protein (ASPSYDRAFT_1005295), mRNA",
+            ">XM_040839763.1 Aspergillus sydowii CBS 593.65 putative MFS efflux transporter (ASPSYDRAFT_1025820), mRNA",
+            ">XM_040839774.1 Aspergillus sydowii CBS 593.65 protein transporter TIM9 (tim9), mRNA",
+            ">XM_040839948.1 Aspergillus sydowii CBS 593.65 MFS transporter (ASPSYDRAFT_1124036), mRNA",
+            ">XM_040839966.1 Aspergillus sydowii CBS 593.65 putative ATP-dependent permease ADP1 (ASPSYDRAFT_1140268), mRNA"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "GO_function: GO:8565 - protein transporter activity;",
+            "GO_function: GO:5215 - transporter activity;",
+            "GO_function: GO:5215 - transporter activity;",
+            "transmembrane transporter activity;",
+            "GO_function: GO:5215 - transporter activity;"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "KV878582.1\tGenbank\tCDS\t64108\t64173\t.\t+\t0\tID=cds-OJJ63244.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52961;Dbxref=InterPro:IPR001494,InterPro:IPR013598,InterPro:IPR014877,JGIDB:Aspsy1_52961,NCBI_GP:OJJ63244.1;Name=OJJ63244.1;Ontology_term=GO:8565,GO:5634%3B nuclear pore ,GO:59%3B intracellular protein transport ;gbkey=CDS;go_component=nucleus |5634%3B nuclear pore |5643|5737;go_function=protein transporter activity |8565||;go_process=protein import into nucleus%2C docking |59%3B intracellular prote",
+            "KV878582.1\tGenbank\tCDS\t64245\t64274\t.\t+\t0\tID=cds-OJJ63244.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52961;Dbxref=InterPro:IPR001494,InterPro:IPR013598,InterPro:IPR014877,JGIDB:Aspsy1_52961,NCBI_GP:OJJ63244.1;Name=OJJ63244.1;Ontology_term=GO:8565,GO:5634%3B nuclear pore ,GO:59%3B intracellular protein transport ;gbkey=CDS;go_component=nucleus |5634%3B nuclear pore |5643|5737;go_function=protein transporter activity |8565||;go_process=protein import into nucleus%2C docking |59%3B intracellular prote",
+            "KV878582.1\tGenbank\tCDS\t64337\t64409\t.\t+\t0\tID=cds-OJJ63244.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52961;Dbxref=InterPro:IPR001494,InterPro:IPR013598,InterPro:IPR014877,JGIDB:Aspsy1_52961,NCBI_GP:OJJ63244.1;Name=OJJ63244.1;Ontology_term=GO:8565,GO:5634%3B nuclear pore ,GO:59%3B intracellular protein transport ;gbkey=CDS;go_component=nucleus |5634%3B nuclear pore |5643|5737;go_function=protein transporter activity |8565||;go_process=protein import into nucleus%2C docking |59%3B intracellular prote",
+            "KV878582.1\tGenbank\tCDS\t64464\t64535\t.\t+\t2\tID=cds-OJJ63244.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52961;Dbxref=InterPro:IPR001494,InterPro:IPR013598,InterPro:IPR014877,JGIDB:Aspsy1_52961,NCBI_GP:OJJ63244.1;Name=OJJ63244.1;Ontology_term=GO:8565,GO:5634%3B nuclear pore ,GO:59%3B intracellular protein transport ;gbkey=CDS;go_component=nucleus |5634%3B nuclear pore |5643|5737;go_function=protein transporter activity |8565||;go_process=protein import into nucleus%2C docking |59%3B intracellular prote",
+            "KV878582.1\tGenbank\tCDS\t64595\t65307\t.\t+\t2\tID=cds-OJJ63244.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52961;Dbxref=InterPro:IPR001494,InterPro:IPR013598,InterPro:IPR014877,JGIDB:Aspsy1_52961,NCBI_GP:OJJ63244.1;Name=OJJ63244.1;Ontology_term=GO:8565,GO:5634%3B nuclear pore ,GO:59%3B intracellular protein transport ;gbkey=CDS;go_component=nucleus |5634%3B nuclear pore |5643|5737;go_function=protein transporter activity |8565||;go_process=protein import into nucleus%2C docking |59%3B intracellular prote"
+          ]
+        }
+      ]
+    },
+    "carbon_metabolism": {
+      "keyword_set": [
+        "glycosidase",
+        "amylase",
+        "dehydrogenase",
+        "oxidoreductase"
+      ],
+      "evidence_file_count": 7,
+      "evidence": [
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">lcl|NW_024467859.1_cds_XP_040707057.1_11 [locus_tag=ASPSYDRAFT_52965] [db_xref=InterPro:IPR006076,JGIDB:Aspsy1_52965,GeneID:63764660] [protein=glycerol-3-phosphate dehydrogenase GUT2] [protein_id=XP_040707057.1] [location=join(82520..82956,83030..83289,83344..84672,84731..84795)] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707139.1_93 [locus_tag=ASPSYDRAFT_142608] [db_xref=InterPro:IPR006094,JGIDB:Aspsy1_142608,GeneID:63757331] [protein=FAD-binding oxidoreductase] [protein_id=XP_040707139.1] [location=complement(join(256315..256618,256765..256890,256975..257411,257490..257990,258060..258143))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707157.1_111 [locus_tag=ASPSYDRAFT_1153844] [db_xref=InterPro:IPR013149,InterPro:IPR013154,JGIDB:Aspsy1_1153844,GeneID:63756074] [protein=NAD(P)-dependent alcohol dehydrogenase] [protein_id=XP_040707157.1] [location=join(301697..301720,301763..301885,301932..302861)] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707197.1_151 [gene=gcy1] [locus_tag=ASPSYDRAFT_37935] [db_xref=InterPro:IPR001395,JGIDB:Aspsy1_37935,GeneID:63761671] [protein=putative glycerol dehydrogenase Gcy1] [protein_id=XP_040707197.1] [location=join(408558..408580,408663..408791,408850..409098,409159..409654)] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707213.1_167 [locus_tag=ASPSYDRAFT_139619] [db_xref=InterPro:IPR002198,JGIDB:Aspsy1_139619,GeneID:63757044] [protein=SDR family NAD(P)-dependent oxidoreductase] [protein_id=XP_040707213.1] [location=complement(join(447760..448595,448678..448729))] [gbkey=CDS]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/product=\"glycerol-3-phosphate dehydrogenase GUT2\"",
+            "/product=\"glycerol-3-phosphate dehydrogenase GUT2\"",
+            "/product=\"FAD-binding oxidoreductase\"",
+            "/product=\"FAD-binding oxidoreductase\"",
+            "/product=\"NAD(P)-dependent alcohol dehydrogenase\""
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "NW_024467859.1\tRefSeq\tmRNA\t82520\t84795\t.\t+\t.\tID=rna-XM_040848587.1;Parent=gene-ASPSYDRAFT_52965;Dbxref=GeneID:63764660,GenBank:XM_040848587.1;Name=XM_040848587.1;end_range=84795,.;gbkey=mRNA;locus_tag=ASPSYDRAFT_52965;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;partial=true;product=glycerol-3-phosphate dehydrogenase GUT2;start_range=.,82520;transcript_id=XM_040848587.1",
+            "NW_024467859.1\tRefSeq\texon\t82520\t82956\t.\t+\t.\tID=exon-XM_040848587.1-1;Parent=rna-XM_040848587.1;Dbxref=GeneID:63764660,GenBank:XM_040848587.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_52965;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;partial=true;product=glycerol-3-phosphate dehydrogenase GUT2;start_range=.,82520;transcript_id=XM_040848587.1",
+            "NW_024467859.1\tRefSeq\texon\t83030\t83289\t.\t+\t.\tID=exon-XM_040848587.1-2;Parent=rna-XM_040848587.1;Dbxref=GeneID:63764660,GenBank:XM_040848587.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_52965;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;partial=true;product=glycerol-3-phosphate dehydrogenase GUT2;transcript_id=XM_040848587.1",
+            "NW_024467859.1\tRefSeq\texon\t83344\t84672\t.\t+\t.\tID=exon-XM_040848587.1-3;Parent=rna-XM_040848587.1;Dbxref=GeneID:63764660,GenBank:XM_040848587.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_52965;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;partial=true;product=glycerol-3-phosphate dehydrogenase GUT2;transcript_id=XM_040848587.1",
+            "NW_024467859.1\tRefSeq\texon\t84731\t84795\t.\t+\t.\tID=exon-XM_040848587.1-4;Parent=rna-XM_040848587.1;Dbxref=GeneID:63764660,GenBank:XM_040848587.1;end_range=84795,.;gbkey=mRNA;locus_tag=ASPSYDRAFT_52965;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;partial=true;product=glycerol-3-phosphate dehydrogenase GUT2;transcript_id=XM_040848587.1"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "match_count_capped": 30,
+          "examples": [
+            ">XP_040695915.1 acyl-CoA dehydrogenase family protein [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695969.1 zinc-binding alcohol dehydrogenase family protein [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695987.1 acyl-CoA dehydrogenase family protein [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696016.1 FAD-binding oxidoreductase [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696143.1 NAD-dependent succinate-semialdehyde dehydrogenase [Aspergillus sydowii CBS 593.65]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">XM_040839770.1 Aspergillus sydowii CBS 593.65 FAD-binding oxidoreductase (ASPSYDRAFT_102693), partial mRNA",
+            ">XM_040839818.1 Aspergillus sydowii CBS 593.65 SDR family oxidoreductase (ASPSYDRAFT_1049617), mRNA",
+            ">XM_040839924.1 Aspergillus sydowii CBS 593.65 isovaleryl-CoA dehydrogenase (ASPSYDRAFT_1111152), mRNA",
+            ">XM_040839926.1 Aspergillus sydowii CBS 593.65 putative D-arabinitol dehydrogenase ArbD (ASPSYDRAFT_1112736), mRNA",
+            ">XM_040840001.1 Aspergillus sydowii CBS 593.65 NAD(P)-dependent alcohol dehydrogenase (ASPSYDRAFT_1153844), partial mRNA"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/note=\"GO_function: GO:16491 - oxidoreductase activity\"",
+            "oxidoreductase activity - electron carrier activity [PMID",
+            "/note=\"GO_function: GO:16491; FAD binding - oxidoreductase",
+            "/note=\"GO_function: GO:16491 - oxidoreductase activity\"",
+            "/note=\"GO_function: GO:10181; oxidoreductase activity -"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "KV878582.1\tGenbank\tCDS\t82520\t82956\t.\t+\t0\tID=cds-OJJ63251.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;Dbxref=InterPro:IPR006076,JGIDB:Aspsy1_52965,NCBI_GP:OJJ63251.1;Name=OJJ63251.1;Ontology_term=GO:16491;gbkey=CDS;go_function=oxidoreductase activity |16491||;locus_tag=ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;product=hypothetical protein;protein_id=OJJ63251.1",
+            "KV878582.1\tGenbank\tCDS\t83030\t83289\t.\t+\t1\tID=cds-OJJ63251.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;Dbxref=InterPro:IPR006076,JGIDB:Aspsy1_52965,NCBI_GP:OJJ63251.1;Name=OJJ63251.1;Ontology_term=GO:16491;gbkey=CDS;go_function=oxidoreductase activity |16491||;locus_tag=ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;product=hypothetical protein;protein_id=OJJ63251.1",
+            "KV878582.1\tGenbank\tCDS\t83344\t84672\t.\t+\t2\tID=cds-OJJ63251.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;Dbxref=InterPro:IPR006076,JGIDB:Aspsy1_52965,NCBI_GP:OJJ63251.1;Name=OJJ63251.1;Ontology_term=GO:16491;gbkey=CDS;go_function=oxidoreductase activity |16491||;locus_tag=ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;product=hypothetical protein;protein_id=OJJ63251.1",
+            "KV878582.1\tGenbank\tCDS\t84731\t84795\t.\t+\t2\tID=cds-OJJ63251.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;Dbxref=InterPro:IPR006076,JGIDB:Aspsy1_52965,NCBI_GP:OJJ63251.1;Name=OJJ63251.1;Ontology_term=GO:16491;gbkey=CDS;go_function=oxidoreductase activity |16491||;locus_tag=ASPSYDRAFT_52965;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA52965;product=hypothetical protein;protein_id=OJJ63251.1",
+            "KV878582.1\tGenbank\tCDS\t151588\t151662\t.\t+\t0\tID=cds-OJJ63280.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA140028;Dbxref=InterPro:IPR002109,JGIDB:Aspsy1_140028,NCBI_GP:OJJ63280.1;Name=OJJ63280.1;Ontology_term=GO:9055%3B protein disulfide oxidoreductase activity ,GO:45454;gbkey=CDS;go_function=electron carrier activity |9055%3B protein disulfide oxidoreductase activity |15035|;go_process=cell redox homeostasis |45454||;locus_tag=ASPSYDRAFT_140028;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA140028;pro"
+          ]
+        }
+      ]
+    },
+    "secondary_metabolism": {
+      "keyword_set": [
+        "polyketide",
+        "nonribosomal",
+        "terpene",
+        "cytochrome p450",
+        "methyltransferase"
+      ],
+      "evidence_file_count": 7,
+      "evidence": [
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">lcl|NW_024467859.1_cds_XP_040707055.1_9 [locus_tag=ASPSYDRAFT_83327] [db_xref=InterPro:IPR001128,JGIDB:Aspsy1_83327,GeneID:63767283] [protein=cytochrome P450] [protein_id=XP_040707055.1] [location=complement(join(78093..78400,78498..78616,78684..79441,79530..79898))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707073.1_27 [locus_tag=ASPSYDRAFT_37792] [db_xref=InterPro:IPR007364,JGIDB:Aspsy1_37792,GeneID:63761644] [protein=SAM-dependent methyltransferase] [protein_id=XP_040707073.1] [location=complement(join(118197..118253,118329..118447,118503..118613,118669..118686,118754..119087))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707082.1_36 [locus_tag=ASPSYDRAFT_37805] [db_xref=InterPro:IPR007318,JGIDB:Aspsy1_37805,GeneID:63761646] [protein=bifunctional phosphatidyl-N-methylethanolamine N-methyltransferase/phosphatidyl-N-dimethylethanolamine N-methyltransferase] [protein_id=XP_040707082.1] [location=join(137767..137815,137874..137913,138020..138036,138105..138531,138604..138679)] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707235.1_189 [gene=nrps1] [locus_tag=ASPSYDRAFT_232116] [db_xref=InterPro:IPR000873,InterPro:IPR001242,InterPro:IPR006163,JGIDB:Aspsy1_232116,GeneID:63760193] [protein=nonribosomal peptide synthase Pes1] [protein_id=XP_040707235.1] [location=complement(join(510392..513055,513111..514714,514768..515413,515466..528044,528097..528399,528472..528888,528945..529445))] [gbkey=CDS]",
+            ">lcl|NW_024467859.1_cds_XP_040707319.1_273 [gene=clrD] [locus_tag=ASPSYDRAFT_53196] [db_xref=InterPro:IPR001214,InterPro:IPR007728,JGIDB:Aspsy1_53196,GeneID:63764717] [protein=histone-lysine N-methyltransferase Clr4] [protein_id=XP_040707319.1] [location=join(757111..757158,757307..758207,758278..758729)] [gbkey=CDS]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/product=\"cytochrome P450\"",
+            "/product=\"cytochrome P450\"",
+            "/product=\"SAM-dependent methyltransferase\"",
+            "/product=\"SAM-dependent methyltransferase\"",
+            "N-methyltransferase/phosphatidyl-N-dimethylethanolamine"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "NW_024467859.1\tRefSeq\tmRNA\t78093\t79898\t.\t-\t.\tID=rna-XM_040851210.1;Parent=gene-ASPSYDRAFT_83327;Dbxref=GeneID:63767283,GenBank:XM_040851210.1;Name=XM_040851210.1;end_range=79898,.;gbkey=mRNA;locus_tag=ASPSYDRAFT_83327;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83327;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83327;partial=true;product=cytochrome P450;start_range=.,78093;transcript_id=XM_040851210.1",
+            "NW_024467859.1\tRefSeq\texon\t79530\t79898\t.\t-\t.\tID=exon-XM_040851210.1-1;Parent=rna-XM_040851210.1;Dbxref=GeneID:63767283,GenBank:XM_040851210.1;end_range=79898,.;gbkey=mRNA;locus_tag=ASPSYDRAFT_83327;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83327;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83327;partial=true;product=cytochrome P450;transcript_id=XM_040851210.1",
+            "NW_024467859.1\tRefSeq\texon\t78684\t79441\t.\t-\t.\tID=exon-XM_040851210.1-2;Parent=rna-XM_040851210.1;Dbxref=GeneID:63767283,GenBank:XM_040851210.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_83327;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83327;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83327;partial=true;product=cytochrome P450;transcript_id=XM_040851210.1",
+            "NW_024467859.1\tRefSeq\texon\t78498\t78616\t.\t-\t.\tID=exon-XM_040851210.1-3;Parent=rna-XM_040851210.1;Dbxref=GeneID:63767283,GenBank:XM_040851210.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_83327;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83327;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83327;partial=true;product=cytochrome P450;transcript_id=XM_040851210.1",
+            "NW_024467859.1\tRefSeq\texon\t78093\t78400\t.\t-\t.\tID=exon-XM_040851210.1-4;Parent=rna-XM_040851210.1;Dbxref=GeneID:63767283,GenBank:XM_040851210.1;gbkey=mRNA;locus_tag=ASPSYDRAFT_83327;orig_protein_id=gnl|WGS:MRCH|ASPSYDRAFT_83327;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA83327;partial=true;product=cytochrome P450;start_range=.,78093;transcript_id=XM_040851210.1"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+          "match_count_capped": 30,
+          "examples": [
+            ">XP_040695714.1 cytochrome P450, partial [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695776.1 class I SAM-dependent methyltransferase [Aspergillus sydowii CBS 593.65]",
+            ">XP_040695901.1 cytochrome P450 [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696173.1 cytochrome P450 [Aspergillus sydowii CBS 593.65]",
+            ">XP_040696237.1 cytochrome P450 [Aspergillus sydowii CBS 593.65]"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "relative_file": "GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+          "match_count_capped": 30,
+          "examples": [
+            ">XM_040839817.1 Aspergillus sydowii CBS 593.65 non-reducing polyketide synthase encA (encA), mRNA",
+            ">XM_040839822.1 Aspergillus sydowii CBS 593.65 class I SAM-dependent methyltransferase (ASPSYDRAFT_1049915), mRNA",
+            ">XM_040839850.1 Aspergillus sydowii CBS 593.65 tRNA (guanine46-N7)-methyltransferase (trm8), mRNA",
+            ">XM_040839890.1 Aspergillus sydowii CBS 593.65 protein-arginine omega-N methyltransferase HMT1 (rmtA), mRNA",
+            ">XM_040840065.1 Aspergillus sydowii CBS 593.65 cytochrome P450 (ASPSYDRAFT_1159285), partial mRNA"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
+          "match_count_capped": 30,
+          "examples": [
+            "/note=\"GO_function: GO:8170 - N-methyltransferase",
+            "GO_function: GO:4047 - aminomethyltransferase activity;",
+            "GO_function: GO:8270; histone-lysine N-methyltransferase",
+            "/note=\"GO_function: GO:8168 - methyltransferase activity;",
+            "/note=\"GO_function: GO:8171 - O-methyltransferase"
+          ]
+        },
+        {
+          "file": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "relative_file": "GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
+          "match_count_capped": 30,
+          "examples": [
+            "KV878582.1\tGenbank\tCDS\t137767\t137815\t.\t+\t0\tID=cds-OJJ63276.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;Dbxref=InterPro:IPR007318,JGIDB:Aspsy1_37805,NCBI_GP:OJJ63276.1;Name=OJJ63276.1;Ontology_term=GO:8170,GO:6644;gbkey=CDS;go_function=N-methyltransferase activity |8170||;go_process=phospholipid metabolic process |6644||;locus_tag=ASPSYDRAFT_37805;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;product=hypothetical protein;protein_id=OJJ63276.1",
+            "KV878582.1\tGenbank\tCDS\t137874\t137913\t.\t+\t2\tID=cds-OJJ63276.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;Dbxref=InterPro:IPR007318,JGIDB:Aspsy1_37805,NCBI_GP:OJJ63276.1;Name=OJJ63276.1;Ontology_term=GO:8170,GO:6644;gbkey=CDS;go_function=N-methyltransferase activity |8170||;go_process=phospholipid metabolic process |6644||;locus_tag=ASPSYDRAFT_37805;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;product=hypothetical protein;protein_id=OJJ63276.1",
+            "KV878582.1\tGenbank\tCDS\t138020\t138036\t.\t+\t1\tID=cds-OJJ63276.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;Dbxref=InterPro:IPR007318,JGIDB:Aspsy1_37805,NCBI_GP:OJJ63276.1;Name=OJJ63276.1;Ontology_term=GO:8170,GO:6644;gbkey=CDS;go_function=N-methyltransferase activity |8170||;go_process=phospholipid metabolic process |6644||;locus_tag=ASPSYDRAFT_37805;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;product=hypothetical protein;protein_id=OJJ63276.1",
+            "KV878582.1\tGenbank\tCDS\t138105\t138531\t.\t+\t2\tID=cds-OJJ63276.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;Dbxref=InterPro:IPR007318,JGIDB:Aspsy1_37805,NCBI_GP:OJJ63276.1;Name=OJJ63276.1;Ontology_term=GO:8170,GO:6644;gbkey=CDS;go_function=N-methyltransferase activity |8170||;go_process=phospholipid metabolic process |6644||;locus_tag=ASPSYDRAFT_37805;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;product=hypothetical protein;protein_id=OJJ63276.1",
+            "KV878582.1\tGenbank\tCDS\t138604\t138679\t.\t+\t1\tID=cds-OJJ63276.1;Parent=rna-gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;Dbxref=InterPro:IPR007318,JGIDB:Aspsy1_37805,NCBI_GP:OJJ63276.1;Name=OJJ63276.1;Ontology_term=GO:8170,GO:6644;gbkey=CDS;go_function=N-methyltransferase activity |8170||;go_process=phospholipid metabolic process |6644||;locus_tag=ASPSYDRAFT_37805;orig_transcript_id=gnl|WGS:MRCH|ASPSYDRAFT_mRNA37805;product=hypothetical protein;protein_id=OJJ63276.1"
+          ]
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "protease_peptidase": "Primary search space for collagenase/protease production hypotheses.",
+    "collagenase_candidate": "Direct keyword hits are strong clues but require sequence/domain validation.",
+    "secondary_metabolism": "BGC-related potential may compete with or complement enzyme production depending on stress state.",
+    "transport": "Transporters constrain substrate uptake and secretion of extracellular products."
+  }
+}

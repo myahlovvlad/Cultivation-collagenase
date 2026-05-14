@@ -1,0 +1,7 @@
+{
+  "bioproject": "PRJNA542911",
+  "runinfo_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_runinfo.csv",
+  "discovery_command": "esearch -db sra -query \"PRJNA542911[BioProject]\" | efetch -format runinfo > \"C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_runinfo.csv\"",
+  "status": "pending_runinfo_discovery",
+  "note": "Run Entrez Direct discovery to populate runinfo, then regenerate sample sheet with confirmed run accessions."
+}

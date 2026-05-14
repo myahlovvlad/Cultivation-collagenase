@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioCult-KB | Aspergillus sydowii</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23153247'/%3E%3Ccircle cx='16' cy='17' r='8' fill='%23167c74'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">BioCult-KB / Aspergillus sydowii</p>
+      <h1>Панель культивирования продуцента коллагенолитических ферментов</h1>
+      <p>Экспертная база знаний, расчётные метрики, 3D-визуализация процесса, GEM-lite/SBML и стенд показаний лабораторного биореактора 1.7 л.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="bioreactor-workbench" aria-labelledby="bioreactor-title">
+      <div class="scene-area">
+        <canvas id="bioreactor-scene" aria-label="3D-модель биореактора"></canvas>
+        <div class="scene-badges" aria-hidden="true">
+          <span>Стеклянный сосуд типа Solida</span>
+          <span>Периодический режим 144 ч</span>
+          <span>Барботаж воздухом</span>
+        </div>
+      </div>
+
+      <div class="workbench-stack">
+        <aside class="process-panel">
+          <p class="eyebrow">3D-визуализация</p>
+          <h2 id="bioreactor-title">Культивирование в биореакторе</h2>
+          <dl class="metric-grid">
+            <div>
+              <dt>Время</dt>
+              <dd id="scene-time">0 ч</dd>
+            </div>
+            <div>
+              <dt>Биомасса</dt>
+              <dd id="scene-biomass">0 г/л</dd>
+            </div>
+            <div>
+              <dt>pO₂</dt>
+              <dd id="scene-po2">0%</dd>
+            </div>
+            <div>
+              <dt>KLA</dt>
+              <dd id="scene-kla">0 ч⁻¹</dd>
+            </div>
+          </dl>
+
+          <label class="range-label" for="process-time">
+            Ход процесса
+            <input id="process-time" type="range" min="0" max="144" step="1" value="0" />
+          </label>
+
+          <div class="control-row">
+            <button id="scene-play" type="button">Пуск</button>
+            <button id="scene-reset" type="button" class="secondary">Сброс</button>
+          </div>
+
+          <dl class="spec-list">
+            <div>
+              <dt>Рабочий объём</dt>
+              <dd id="scene-volume">1.7 л</dd>
+            </div>
+            <div>
+              <dt>Перемешивание</dt>
+              <dd id="scene-rpm">220 об/мин</dd>
+            </div>
+            <div>
+              <dt>Среда</dt>
+              <dd id="scene-medium">MOLASSES20_PEPTONE85_V1</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <section class="panel sensor-stand" aria-labelledby="sensor-title">
+          <p class="eyebrow">Стенд датчиков</p>
+          <h2 id="sensor-title">Показания датчиков</h2>
+          <div id="sensor-readings-grid" class="sensor-grid"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="analytics-dashboard" aria-labelledby="analytics-title">
+      <div class="panel trend-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Временные ряды</p>
+            <h2 id="analytics-title">Динамика показателей во времени</h2>
+          </div>
+          <div class="chart-tabs" aria-label="Группы графиков">
+            <button type="button" class="secondary active" data-chart="gases">Газы</button>
+            <button type="button" class="secondary" data-chart="culture">Культура</button>
+            <button type="button" class="secondary" data-chart="control">Контур</button>
+            <button type="button" class="secondary" data-chart="media">Среда</button>
+          </div>
+        </div>
+        <canvas id="sensor-trend-chart" class="trend-canvas" aria-label="График временного ряда датчиков"></canvas>
+      </div>
+
+      <aside class="panel expert-panel" aria-labelledby="expert-title">
+        <p class="eyebrow">Экспертная система</p>
+        <h2 id="expert-title">Аналитический дашборд</h2>
+
+        <div class="expert-summary">
+          <div>
+            <dt>Фаза процесса</dt>
+            <dd id="expert-phase">Адаптация инокулюма</dd>
+          </div>
+          <div>
+            <dt>Уверенность</dt>
+            <dd id="expert-confidence">Средняя</dd>
+          </div>
+        </div>
+
+        <div class="risk-block">
+          <div class="sensor-topline">
+            <span>Интегральный риск</span>
+            <strong id="expert-risk">0%</strong>
+          </div>
+          <div class="risk-track"><span id="expert-risk-fill"></span></div>
+        </div>
+
+        <h3>События</h3>
+        <ul id="expert-alerts" class="expert-list"></ul>
+
+        <h3>Действия оператора</h3>
+        <ul id="expert-actions" class="expert-list"></ul>
+      </aside>
+    </section>
+
+    <section class="systems-dashboard" aria-labelledby="systems-title">
+      <div class="panel optimizer-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Геном → процесс</p>
+            <h2 id="systems-title">Согласование клетки и биореактора</h2>
+          </div>
+        </div>
+
+        <p class="panel-note">Ниже заданы проектные уставки среды и режима. Фактические показания датчиков отображаются отдельно в 3D-панели и стенде датчиков.</p>
+
+        <form id="media-optimizer-form" class="optimizer-form">
+          <label>Меласса, г/л<input type="range" name="molasses_g_l" min="0" max="60" step="1" value="20" /><span data-value-for="molasses_g_l">20</span></label>
+          <label>Пептон, г/л<input type="range" name="peptone_g_l" min="0" max="140" step="1" value="85" /><span data-value-for="peptone_g_l">85</span></label>
+          <label>Коллагеновый субстрат, г/л<input type="range" name="collagen_g_l" min="0" max="20" step="0.5" value="5" /><span data-value-for="collagen_g_l">5</span></label>
+          <label>Минеральный фактор<input type="range" name="mineral_factor" min="0" max="1.5" step="0.05" value="1" /><span data-value-for="mineral_factor">1</span></label>
+          <label>pH среды<input type="range" name="pH" min="4.5" max="9" step="0.05" value="7.2" /><span data-value-for="pH">7.2</span></label>
+          <label>Аэрация, vvm<input type="range" name="aeration_vvm" min="0" max="2" step="0.05" value="0.8" /><span data-value-for="aeration_vvm">0.8</span></label>
+          <label>Перемешивание, об/мин<input type="range" name="rpm" min="0" max="600" step="10" value="220" /><span data-value-for="rpm">220</span></label>
+        </form>
+      </div>
+
+      <div class="panel cell-panel">
+        <p class="eyebrow">Клеточные программы</p>
+        <h2>Программа жизнедеятельности</h2>
+        <div id="cell-program-list" class="program-list"></div>
+      </div>
+
+      <div class="panel projection-panel">
+        <p class="eyebrow">Прогноз процесса</p>
+        <h2>Прогноз влияния среды</h2>
+        <div id="process-projection-grid" class="projection-grid"></div>
+        <div class="optimizer-result">
+          <h3>Оптимальный сценарий</h3>
+          <div id="cultivation-optimizer-result" class="projection-grid"></div>
+        </div>
+        <h3>Рекомендации</h3>
+        <ul id="media-optimization-recommendations" class="expert-list"></ul>
+      </div>
+
+      <div class="panel bridge-panel">
+        <p class="eyebrow">Связи модели</p>
+        <h2>Связи уровней модели</h2>
+        <div id="genome-process-links" class="bridge-list"></div>
+        <h3>Сводка генома</h3>
+        <div id="system-biology-summary" class="projection-grid"></div>
+        <h3>Аннотационные доказательства</h3>
+        <div id="biosynthesis-potential-list" class="program-list"></div>
+        <h3>Оценка условий</h3>
+        <div id="system-biology-condition" class="projection-grid"></div>
+        <div id="system-biology-programs" class="program-list"></div>
+        <h3>Предупреждения и интерпретация</h3>
+        <ul id="system-biology-warnings" class="expert-list"></ul>
+        <ul id="system-biology-interpretation" class="expert-list"></ul>
+      </div>
+    </section>
+
+    <section class="panel gem-panel" aria-labelledby="gem-title">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">COBRA / SBML</p>
+          <h2 id="gem-title">GEM-lite и симуляция процесса</h2>
+        </div>
+        <div class="control-row">
+          <label class="compact-control">Режим
+            <select id="process-mode-select">
+              <option value="batch">Периодический</option>
+              <option value="fed_batch">Отъёмно-доливной</option>
+              <option value="continuous">Непрерывный</option>
+            </select>
+          </label>
+          <a id="gem-sbml-link" class="button-link" href="/api/gem/sbml">Скачать SBML</a>
+        </div>
+      </div>
+
+      <div class="gem-layout">
+        <div>
+          <h3>SBML-модель</h3>
+          <div id="gem-summary-grid" class="projection-grid"></div>
+        </div>
+        <div>
+          <h3>Результат FBA</h3>
+          <div id="gem-fba-grid" class="projection-grid"></div>
+        </div>
+        <div>
+          <h3>Профиль процесса</h3>
+          <div id="process-simulation-grid" class="projection-grid"></div>
+        </div>
+        <div>
+          <h3>Уравнения баланса</h3>
+          <ul id="process-equations-list" class="expert-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="omics-dashboard" aria-labelledby="omics-title">
+      <div class="panel omics-control-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">OMICS-пайплайн</p>
+            <h2 id="omics-title">Пайплайн генома, транскриптома и метаболома</h2>
+          </div>
+          <div class="control-row">
+            <button id="omics-scaffold-button" type="button">Создать артефакты</button>
+            <button id="omics-discover-button" type="button" class="secondary">Найти RunInfo</button>
+            <button id="omics-download-genomes-button" type="button" class="secondary">Пакеты геномов</button>
+            <button id="omics-biosynthesis-button" type="button" class="secondary">Отчёт биосинтеза</button>
+          </div>
+        </div>
+
+        <form id="omics-form" class="omics-form">
+          <label>Доступ генома<input name="genome_accession" value="GCA_001890705.1" /></label>
+          <label>BioProject транскриптома<input name="transcriptome_bioproject" value="PRJNA542911" /></label>
+          <label>Источник метаболома<input name="metabolome_label" value="A. sydowii co-culture metabolomics paper" /></label>
+        </form>
+
+        <div id="omics-validation" class="omics-validation"></div>
+        <pre id="omics-commands" class="commands-box"></pre>
+      </div>
+
+      <div class="panel omics-registry-panel">
+        <p class="eyebrow">Реестр источников</p>
+        <h2>Реестр источников</h2>
+        <div id="omics-registry-summary" class="registry-summary"></div>
+        <div id="omics-tool-status" class="tool-status"></div>
+      </div>
+
+      <div class="panel omics-artifacts-panel">
+        <p class="eyebrow">Артефакты</p>
+        <h2>Выходные файлы</h2>
+        <div id="omics-artifacts" class="artifact-list"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Справочники</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Штаммы</h3>
+          <ul id="strain-list"></ul>
+        </div>
+        <div class="card">
+          <h3>Среды</h3>
+          <ul id="media-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Расчёт метрик</h2>
+      <p class="panel-note">Форма ниже рассчитывает метрики для введённой контрольной точки, а не для текущей позиции 3D-слайдера.</p>
+      <form id="calculate-form">
+        <div class="form-grid">
+          <label>Время, ч<input type="number" step="0.1" name="time_h" value="120" required /></label>
+          <label>pO₂, %<input type="number" step="0.1" name="pO2_percent" value="21" /></label>
+          <label>Биомасса<input type="number" step="0.01" name="biomass" value="3.4" /></label>
+          <label>KLA<input type="number" step="0.01" name="kla" value="80" /></label>
+          <label>Белок<input type="number" step="0.01" name="protein" value="1.2" /></label>
+          <label>Сахар<input type="number" step="0.01" name="sugars" value="10" /></label>
+        </div>
+        <button type="submit">Рассчитать</button>
+      </form>
+      <div id="calculation-result" class="result"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Рекомендации</h2>
+      <form id="recommendation-form">
+        <div class="form-grid">
+          <label>Последний pO₂, %<input type="number" step="0.1" name="last_pO2_percent" value="21" /></label>
+          <label class="checkbox-label"><input type="checkbox" name="controls_present" checked />Контрольные образцы</label>
+          <label>Время сбора, ч<input type="number" step="1" name="collection_time_h" value="144" /></label>
+        </div>
+        <button type="submit">Получить рекомендации</button>
+      </form>
+      <div id="recommendation-result" class="result"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Импорт данных</h2>
+      <button id="import-button" type="button">Импортировать компоненты среды из Excel</button>
+      <div id="import-result" class="result"></div>
+    </section>
+  </main>
+
+  <script type="module" src="/static/bioreactor_scene.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
