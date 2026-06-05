@@ -1,1 +1,7 @@
 sample_id	run_accession	bioproject	condition	replicate	notes
+PRJNA542911_sample_1	SRR9054737	PRJNA542911	unknown	1	Fill after SRA metadata review
+PRJNA542911_sample_2	SRR9054736	PRJNA542911	unknown	2	Fill after SRA metadata review
+PRJNA542911_sample_3	SRR9054733	PRJNA542911	unknown	3	Fill after SRA metadata review
+PRJNA542911_sample_4	SRR9054732	PRJNA542911	unknown	4	Fill after SRA metadata review
+PRJNA542911_sample_5	SRR9054735	PRJNA542911	unknown	5	Fill after SRA metadata review
+PRJNA542911_sample_6	SRR9054734	PRJNA542911	unknown	6	Fill after SRA metadata review

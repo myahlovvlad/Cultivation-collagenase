@@ -231,7 +231,7 @@ def scaffold_project(request: OmicsProjectRequest) -> dict[str, Any]:
             "created_at_utc": datetime.now(timezone.utc).isoformat(),
             "package_dir": str(packages_dir),
             "assets": assets,
-            "note": "Assets are empty until the NCBI genome package is downloaded and unpacked.",
+            "note": "Assets reflect the local NCBI genome package when present; empty means the package has not been downloaded or unpacked yet.",
         },
     )
     if not runinfo_path.exists():

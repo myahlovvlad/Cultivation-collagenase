@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Text
 from sqlalchemy.orm import relationship
 
@@ -74,6 +76,7 @@ class BatchRun(Base):
     medium = relationship("Medium", back_populates="batch_runs")
     bioreactor = relationship("Bioreactor", back_populates="batch_runs")
     observations = relationship("Observation", back_populates="batch_run")
+    audit_records = relationship("AuditRecord", back_populates="batch_run")
 
 
 class Observation(Base):
@@ -103,3 +106,96 @@ class Rule(Base):
     conclusion = Column(Text, nullable=False)
     recommendation = Column(Text, nullable=False)
     confidence = Column(String, default="medium")
+
+
+class AuditRecord(Base):
+    __tablename__ = "audit_records"
+
+    id = Column(Integer, primary_key=True, index=True)
+    timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)
+    user = Column(String, nullable=False, default="system")
+    session_id = Column(String, nullable=False, default="default")
+    batch_id = Column(Integer, ForeignKey("batch_runs.id"), nullable=True)
+    action_type = Column(String, nullable=False)
+    module = Column(String, nullable=False, default="unknown")
+    recommendation = Column(Text, nullable=False, default="")
+    evidence_json = Column(Text, nullable=False, default="{}")
+    confidence = Column(Float, nullable=True)
+    decision = Column(String, nullable=True)
+    decision_reason = Column(Text, nullable=True)
+    outcome_json = Column(Text, nullable=True)
+    record_hash = Column(String, nullable=False)
+
+    batch_run = relationship("BatchRun", back_populates="audit_records")
+
+
+class CultureFluidState(Base):
+    __tablename__ = "culture_fluid_states"
+
+    id = Column(Integer, primary_key=True, index=True)
+    batch_id = Column(Integer, ForeignKey("batch_runs.id"), nullable=True)
+    time_h = Column(Float, nullable=False)
+    biomass_g_l = Column(Float, nullable=True)
+    density_g_ml = Column(Float, nullable=True)
+    viscosity_mpa_s = Column(Float, nullable=True)
+    conductivity_ms_cm = Column(Float, nullable=True)
+    buffer_capacity_mmol_l_pH = Column(Float, nullable=True)
+    state_json = Column(Text, nullable=False, default="{}")
+
+
+class ExpertSystemLog(Base):
+    __tablename__ = "expert_system_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    batch_id = Column(Integer, ForeignKey("batch_runs.id"), nullable=True)
+    timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)
+    module = Column(String, nullable=False, default="expert_system")
+    recommendations_json = Column(Text, nullable=False, default="[]")
+    confidence = Column(Float, nullable=True)
+    evidence_json = Column(Text, nullable=False, default="{}")
+
+
+class TranscriptomeDataset(Base):
+    __tablename__ = "transcriptome_datasets"
+
+    id = Column(Integer, primary_key=True, index=True)
+    dataset_id = Column(String, nullable=False, unique=True)
+    source_label = Column(String, nullable=False, default="uploaded_tpm")
+    path = Column(Text, nullable=False)
+    gene_count = Column(Integer, nullable=False, default=0)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+
+class DfbaRun(Base):
+    __tablename__ = "dfba_runs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    batch_id = Column(Integer, ForeignKey("batch_runs.id"), nullable=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    status = Column(String, nullable=False, default="optimal")
+    degraded_mode = Column(Integer, nullable=False, default=0)
+    input_json = Column(Text, nullable=False, default="{}")
+    result_json = Column(Text, nullable=False, default="{}")
+
+
+class DoeDesign(Base):
+    __tablename__ = "doe_designs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    design_type = Column(String, nullable=False, default="latin_hypercube")
+    factors_json = Column(Text, nullable=False, default="{}")
+    runs_json = Column(Text, nullable=False, default="[]")
+
+
+class ScalingPrediction(Base):
+    __tablename__ = "scaling_predictions"
+
+    id = Column(Integer, primary_key=True, index=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    source_volume_l = Column(Float, nullable=False)
+    target_volume_l = Column(Float, nullable=False)
+    source_kla_h = Column(Float, nullable=True)
+    target_kla_h = Column(Float, nullable=True)
+    recommended_rpm = Column(Float, nullable=True)
+    result_json = Column(Text, nullable=False, default="{}")

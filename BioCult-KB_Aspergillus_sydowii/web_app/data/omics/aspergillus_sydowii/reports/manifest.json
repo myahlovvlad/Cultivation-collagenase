@@ -1,8 +1,8 @@
 {
-  "created_at_utc": "2026-05-14T15:11:20.320609+00:00",
+  "created_at_utc": "2026-05-27T16:49:33.356603+00:00",
   "organism_name": "Aspergillus sydowii",
   "primary_selection": {
-    "genome_accession": "GCA_001890705.1",
+    "genome_accession": "GCF_001890705.1",
     "transcriptome_bioproject": "PRJNA542911",
     "metabolome_label": "A. sydowii co-culture metabolomics paper"
   },

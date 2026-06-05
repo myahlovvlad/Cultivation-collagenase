@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SAMPLE_SHEET="${1:-C:\Users\Vlad Myahlov\Documents\GitHub\Cultivation-collagenase\BioCult-KB_Aspergillus_sydowii\web_app\data\omics\aspergillus_sydowii\reports\PRJNA542911_sample_sheet.tsv}"
+SAMPLE_SHEET="${1:-D:\Vlad Myahlov\Python Project\Cultivation-collagenase\BioCult-KB_Aspergillus_sydowii\web_app\data\omics\aspergillus_sydowii\reports\PRJNA542911_sample_sheet.tsv}"
 OUT_DIR="${2:-fastq}"
 mkdir -p "$OUT_DIR"
 

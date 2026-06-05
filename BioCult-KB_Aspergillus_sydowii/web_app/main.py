@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -20,7 +21,8 @@ from . import (
     schemas,
     system_biology,
 )
-from .db import SessionLocal, init_db
+from .core import audit, dfba_engine, doe, scaling, transcriptome
+from .db import DATABASE_PATH, SessionLocal, init_db
 
 app = FastAPI(
     title="BioCult-KB: база знаний культивирования",
@@ -57,6 +59,13 @@ def _as_optional_float(value: Any) -> float | None:
         return None
 
 
+def _audit_safely(db: Session, payload: schemas.AuditLogInput) -> None:
+    try:
+        audit.log_event(db, payload)
+    except Exception:
+        db.rollback()
+
+
 @app.on_event("startup")
 def startup_event():
     init_db()
@@ -83,6 +92,9 @@ def startup_event():
 
 @app.get("/", include_in_schema=False)
 def index():
+    v2_index = static_dir / "v2" / "index.html"
+    if v2_index.exists():
+        return FileResponse(v2_index)
     return FileResponse(static_dir / "index.html")
 
 
@@ -271,8 +283,19 @@ def read_cell_process_model():
 
 
 @app.post("/api/media-optimization", response_model=schemas.MediaOptimizationResult)
-def optimize_media_strategy(input_data: schemas.MediaOptimizationInput):
-    return cell_process.evaluate_media_strategy(input_data)
+def optimize_media_strategy(input_data: schemas.MediaOptimizationInput, db: Session = Depends(get_db)):
+    result = cell_process.evaluate_media_strategy(input_data)
+    _audit_safely(
+        db,
+        schemas.AuditLogInput(
+            action_type="process_design",
+            module="media_optimization",
+            recommendation="Media optimization evaluated.",
+            evidence={"input": input_data.model_dump(), "projection": result.projection.model_dump()},
+            confidence=0.72,
+        ),
+    )
+    return result
 
 
 @app.get("/api/system-biology-model", response_model=schemas.SystemBiologyModelResult)
@@ -315,8 +338,24 @@ def read_process_modes():
 
 
 @app.post("/api/process-simulation", response_model=schemas.ProcessSimulationResult)
-def simulate_process(input_data: schemas.ProcessSimulationInput):
-    return process_simulation.simulate_process(input_data)
+def simulate_process(input_data: schemas.ProcessSimulationInput, db: Session = Depends(get_db)):
+    result = process_simulation.simulate_process(input_data)
+    _audit_safely(
+        db,
+        schemas.AuditLogInput(
+            action_type="simulation_complete",
+            module="dfba_engine",
+            recommendation=f"Process simulation completed in {result['process_mode']} mode.",
+            evidence={
+                "duration_h": input_data.duration_h,
+                "step_h": input_data.step_h,
+                "degraded_mode": result["degraded_mode"],
+                "fba_status": result["fba_status"],
+            },
+            confidence=0.78 if not result["degraded_mode"] else 0.42,
+        ),
+    )
+    return result
 
 
 @app.get("/api/cultivation-optimizer", response_model=schemas.CultivationOptimizationResult)
@@ -350,29 +389,39 @@ def preview_omics_manifest(input_data: schemas.OmicsProjectRequest):
 
 
 @app.post("/api/omics/scaffold", response_model=schemas.OmicsScaffoldResult)
-def scaffold_omics_project(input_data: schemas.OmicsProjectRequest):
-    return schemas.OmicsScaffoldResult(**omics_pipeline.scaffold_project(input_data))
+def scaffold_omics_project(input_data: schemas.OmicsProjectRequest, db: Session = Depends(get_db)):
+    result = schemas.OmicsScaffoldResult(**omics_pipeline.scaffold_project(input_data))
+    _audit_safely(db, schemas.AuditLogInput(action_type="omics_scaffold", module="omics_pipeline", recommendation="OMICS scaffold artifacts generated.", evidence=result.model_dump(), confidence=0.7))
+    return result
 
 
 @app.post("/api/omics/download-genomes")
-def download_verified_genome_packages():
-    return omics_pipeline.download_all_verified_genome_packages()
+def download_verified_genome_packages(db: Session = Depends(get_db)):
+    result = omics_pipeline.download_all_verified_genome_packages()
+    _audit_safely(db, schemas.AuditLogInput(action_type="omics_download", module="omics_pipeline", recommendation="Verified genome packages downloaded.", evidence={"ok_count": result.get("ok_count"), "asset_count": result.get("asset_count")}, confidence=0.82))
+    return result
 
 
 @app.post("/api/omics/discover-transcriptome")
-def discover_omics_transcriptome(input_data: schemas.OmicsProjectRequest):
-    return omics_pipeline.discover_transcriptome_runinfo_http(input_data.transcriptome_bioproject)
+def discover_omics_transcriptome(input_data: schemas.OmicsProjectRequest, db: Session = Depends(get_db)):
+    result = omics_pipeline.discover_transcriptome_runinfo_http(input_data.transcriptome_bioproject)
+    _audit_safely(db, schemas.AuditLogInput(action_type="omics_runinfo", module="omics_pipeline", recommendation="Transcriptome SRA RunInfo discovered.", evidence={"bioproject": input_data.transcriptome_bioproject, "run_count": result.get("run_count")}, confidence=0.78))
+    return result
 
 
 @app.post("/api/omics/biosynthesis-report")
-def build_omics_biosynthesis_report():
-    return omics_pipeline.build_biosynthesis_asset_report()
+def build_omics_biosynthesis_report(db: Session = Depends(get_db)):
+    result = omics_pipeline.build_biosynthesis_asset_report()
+    _audit_safely(db, schemas.AuditLogInput(action_type="omics_biosynthesis_report", module="omics_pipeline", recommendation="Biosynthesis evidence report generated.", evidence={"scanned_file_count": result.get("scanned_file_count")}, confidence=0.76))
+    return result
 
 
 @app.post("/api/calculate", response_model=schemas.CalculationResult)
-def calculate_metrics(input_data: schemas.CalculationInput):
+def calculate_metrics(input_data: schemas.CalculationInput, db: Session = Depends(get_db)):
     observations = [schemas.ObservationBase(**obs.dict()) for obs in input_data.observations]
-    return calculations.calculate_metrics(observations)
+    result = calculations.calculate_metrics(observations)
+    _audit_safely(db, schemas.AuditLogInput(action_type="calculation", module="calculations", recommendation="Observation metrics calculated.", evidence={"observation_count": len(observations), "result": result.model_dump()}, confidence=0.68))
+    return result
 
 
 @app.post("/api/recommend", response_model=schemas.RecommendationResult)
@@ -383,12 +432,121 @@ def get_recommendations(input_data: schemas.RecommendationInput, db: Session = D
         if medium is None:
             raise HTTPException(status_code=404, detail="Среда не найдена")
 
-    return schemas.RecommendationResult(
+    result = schemas.RecommendationResult(
         recommendations=recommendations.recommend(
             input_data.dict(),
             medium=medium,
         )
     )
+    _audit_safely(db, schemas.AuditLogInput(action_type="recommendation", module="expert_system", recommendation="; ".join(result.recommendations), evidence=input_data.model_dump(), confidence=0.64))
+    return result
+
+
+@app.post("/api/audit/log", response_model=schemas.AuditRecordSchema)
+def log_audit_event(input_data: schemas.AuditLogInput, db: Session = Depends(get_db)):
+    return audit.log_event(db, input_data)
+
+
+@app.get("/api/audit/records", response_model=List[schemas.AuditRecordSchema])
+def read_audit_records(limit: int = 50, db: Session = Depends(get_db)):
+    limit = max(1, min(500, limit))
+    return db.query(models.AuditRecord).order_by(models.AuditRecord.id.desc()).limit(limit).all()
+
+
+@app.get("/api/audit/verify/{record_id}", response_model=schemas.AuditVerifyResult)
+def verify_audit_record(record_id: int, db: Session = Depends(get_db)):
+    record = db.query(models.AuditRecord).filter(models.AuditRecord.id == record_id).first()
+    if record is None:
+        raise HTTPException(status_code=404, detail="Audit record not found")
+    return audit.verify_record(record)
+
+
+@app.post("/api/dfba/step", response_model=schemas.DfbaStepResult)
+def run_dfba_step(input_data: schemas.DfbaStepInput, db: Session = Depends(get_db)):
+    result = dfba_engine.run_dfba_step(input_data)
+    db.add(
+        models.DfbaRun(
+            status=result["status"],
+            degraded_mode=1 if result["degraded_mode"] else 0,
+            input_json=json.dumps(input_data.model_dump(), ensure_ascii=False, sort_keys=True),
+            result_json=json.dumps(result, ensure_ascii=False, sort_keys=True),
+        )
+    )
+    db.commit()
+    _audit_safely(db, schemas.AuditLogInput(action_type="fba_step", module="dfba_engine", recommendation="dFBA step calculated.", evidence={"status": result["status"], "mu": result["dfba_mu_h"], "kLa": result["kLa_h"]}, confidence=0.78 if result["status"] == "optimal" else 0.4))
+    return result
+
+
+@app.post("/api/dfba/simulate", response_model=schemas.ProcessSimulationResult)
+def run_dfba_simulation(input_data: schemas.ProcessSimulationInput, db: Session = Depends(get_db)):
+    return simulate_process(input_data, db)
+
+
+@app.post("/api/transcriptome/upload-tpm")
+def upload_transcriptome_tpm(input_data: schemas.TranscriptomeUploadInput, db: Session = Depends(get_db)):
+    result = transcriptome.save_tpm_csv(input_data.dataset_id, input_data.csv_text)
+    existing = db.query(models.TranscriptomeDataset).filter(models.TranscriptomeDataset.dataset_id == input_data.dataset_id).first()
+    if existing is None:
+        db.add(models.TranscriptomeDataset(dataset_id=input_data.dataset_id, source_label=input_data.source_label or "uploaded_tpm", path=result["path"], gene_count=result["gene_count"]))
+    else:
+        existing.path = result["path"]
+        existing.gene_count = result["gene_count"]
+        existing.source_label = input_data.source_label or existing.source_label
+    db.commit()
+    _audit_safely(db, schemas.AuditLogInput(action_type="transcriptome_upload", module="transcriptome", recommendation="TPM matrix uploaded for E-Flux.", evidence=result, confidence=0.72))
+    return result
+
+
+@app.post("/api/transcriptome/fba")
+def run_transcriptome_fba(input_data: schemas.TranscriptomeFbaInput, db: Session = Depends(get_db)):
+    result = transcriptome.run_transcriptome_fba(input_data)
+    _audit_safely(db, schemas.AuditLogInput(action_type="transcriptome_fba", module="transcriptome", recommendation="Transcriptome-weighted FBA evaluated.", evidence={"dataset_id": input_data.dataset_id, "gene_coverage": result.get("gene_coverage"), "status": result.get("status")}, confidence=0.7))
+    return result
+
+
+@app.post("/api/scaling/predict")
+def predict_scaling(input_data: schemas.ScalingInput, db: Session = Depends(get_db)):
+    result = scaling.predict_scaling(**input_data.model_dump())
+    db.add(
+        models.ScalingPrediction(
+            source_volume_l=input_data.source_volume_l,
+            target_volume_l=input_data.target_volume_l,
+            source_kla_h=result["source_kla_h"],
+            target_kla_h=result["target_kla_h"],
+            recommended_rpm=result["recommended_rpm"],
+            result_json=json.dumps(result, ensure_ascii=False, sort_keys=True),
+        )
+    )
+    db.commit()
+    _audit_safely(db, schemas.AuditLogInput(action_type="scaling_prediction", module="scaling", recommendation="Scale-up prediction generated.", evidence=result, confidence=0.66))
+    return result
+
+
+@app.post("/api/doe/generate")
+def generate_doe(input_data: schemas.DoeInput, db: Session = Depends(get_db)):
+    result = doe.generate_doe(input_data.n_runs, input_data.factors, input_data.seed)
+    db.add(models.DoeDesign(design_type=result["design_type"], factors_json=json.dumps(result["factors"], sort_keys=True), runs_json=json.dumps(result["runs"], sort_keys=True)))
+    db.commit()
+    _audit_safely(db, schemas.AuditLogInput(action_type="doe_generate", module="doe", recommendation="DOE design generated.", evidence={"n_runs": result["n_runs"], "factors": result["factors"]}, confidence=0.68))
+    return result
+
+
+@app.post("/api/process-event")
+def log_process_event(input_data: schemas.ProcessEventInput, db: Session = Depends(get_db)):
+    record = audit.log_event(
+        db,
+        schemas.AuditLogInput(
+            user=input_data.user,
+            session_id=input_data.session_id,
+            batch_id=input_data.batch_id,
+            action_type=input_data.event_type,
+            module=input_data.module,
+            recommendation=f"Process event recorded: {input_data.event_type}",
+            evidence=input_data.payload,
+            confidence=input_data.confidence,
+        ),
+    )
+    return {"ok": True, "audit_record_id": record.id, "record_hash": record.record_hash}
 
 
 @app.post("/api/import-excel", response_model=schemas.ImportResult)
@@ -400,4 +558,4 @@ def import_excel_data(db: Session = Depends(get_db)):
 
 @app.get("/api/health")
 def health() -> Dict[str, str]:
-    return {"status": "ok", "database": str(Path(__file__).resolve().parents[1] / "data" / "app.db")}
+    return {"status": "ok", "database": str(DATABASE_PATH)}

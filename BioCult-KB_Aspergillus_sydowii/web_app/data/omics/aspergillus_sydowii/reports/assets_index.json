@@ -1,446 +1,61 @@
 {
-  "created_at_utc": "2026-05-14T15:11:30.077971+00:00",
-  "downloaded_genome_packages": [
-    {
-      "accession": "GCA_001890705.1",
-      "ok": true,
-      "url": "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCA_001890705.1/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=GENOME_GBFF&include_annotation_type=SEQUENCE_REPORT",
-      "zip_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1_ncbi_dataset.zip",
-      "zip_size_bytes": 44632396,
-      "package_dir": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1",
-      "asset_count": 8,
-      "assets": [
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 4157
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\dataset_catalog.json",
-          "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-          "asset_type": "report",
-          "size_bytes": 1148
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\cds_from_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\cds_from_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 22594718
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\GCA_001890705.1_Aspsy1_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\GCA_001890705.1_Aspsy1_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 34822177
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
-          "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
-          "asset_type": "genbank",
-          "size_bytes": 63401792
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
-          "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
-          "asset_type": "gff",
-          "size_bytes": 37810793
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\protein.faa",
-          "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\protein.faa",
-          "asset_type": "protein_fasta",
-          "size_bytes": 7535583
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\sequence_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\sequence_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 26753
-        }
-      ]
-    },
-    {
-      "accession": "GCF_001890705.1",
-      "ok": true,
-      "url": "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCF_001890705.1/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=GENOME_GBFF&include_annotation_type=SEQUENCE_REPORT",
-      "zip_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1_ncbi_dataset.zip",
-      "zip_size_bytes": 52183071,
-      "package_dir": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1",
-      "asset_count": 9,
-      "assets": [
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 4244
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\dataset_catalog.json",
-          "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-          "asset_type": "report",
-          "size_bytes": 1292
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 23105958
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\GCF_001890705.1_Aspsy1_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\GCF_001890705.1_Aspsy1_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 34822565
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
-          "asset_type": "genbank",
-          "size_bytes": 65474613
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
-          "asset_type": "gff",
-          "size_bytes": 39219274
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
-          "asset_type": "protein_fasta",
-          "size_bytes": 7578770
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 22753536
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\sequence_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\sequence_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 26753
-        }
-      ]
-    },
-    {
-      "accession": "GCA_034192605.1",
-      "ok": true,
-      "url": "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCA_034192605.1/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=GENOME_GBFF&include_annotation_type=SEQUENCE_REPORT",
-      "zip_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1_ncbi_dataset.zip",
-      "zip_size_bytes": 25636716,
-      "package_dir": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1",
-      "asset_count": 5,
-      "assets": [
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 2347
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\dataset_catalog.json",
-          "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-          "asset_type": "report",
-          "size_bytes": 724
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\GCA_034192605.1\\GCA_034192605.1_ASM3419260v1_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCA_034192605.1\\GCA_034192605.1_ASM3419260v1_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 35361531
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\GCA_034192605.1\\genomic.gbff",
-          "relative_path": "ncbi_dataset\\data\\GCA_034192605.1\\genomic.gbff",
-          "asset_type": "genbank",
-          "size_bytes": 44256539
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\GCA_034192605.1\\sequence_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\GCA_034192605.1\\sequence_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 2381
-        }
-      ]
-    },
-    {
-      "accession": "GCA_050948135.1",
-      "ok": true,
-      "url": "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCA_050948135.1/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=GENOME_GBFF&include_annotation_type=SEQUENCE_REPORT",
-      "zip_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1_ncbi_dataset.zip",
-      "zip_size_bytes": 25999068,
-      "package_dir": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1",
-      "asset_count": 5,
-      "assets": [
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 2212
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\dataset_catalog.json",
-          "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-          "asset_type": "report",
-          "size_bytes": 724
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\GCA_050948135.1\\GCA_050948135.1_ASM5094813v1_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCA_050948135.1\\GCA_050948135.1_ASM5094813v1_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 35778841
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\GCA_050948135.1\\genomic.gbff",
-          "relative_path": "ncbi_dataset\\data\\GCA_050948135.1\\genomic.gbff",
-          "asset_type": "genbank",
-          "size_bytes": 44793603
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\GCA_050948135.1\\sequence_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\GCA_050948135.1\\sequence_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 5064
-        }
-      ]
-    },
-    {
-      "accession": "GCA_026319385.1",
-      "ok": true,
-      "url": "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCA_026319385.1/download?include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&include_annotation_type=RNA_FASTA&include_annotation_type=CDS_FASTA&include_annotation_type=PROT_FASTA&include_annotation_type=GENOME_GBFF&include_annotation_type=SEQUENCE_REPORT",
-      "zip_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1_ncbi_dataset.zip",
-      "zip_size_bytes": 26355547,
-      "package_dir": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1",
-      "asset_count": 5,
-      "assets": [
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 2347
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\dataset_catalog.json",
-          "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-          "asset_type": "report",
-          "size_bytes": 726
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\GCA_026319385.1\\GCA_026319385.1_ASM2631938v1_genomic.fna",
-          "relative_path": "ncbi_dataset\\data\\GCA_026319385.1\\GCA_026319385.1_ASM2631938v1_genomic.fna",
-          "asset_type": "genomic_fasta",
-          "size_bytes": 35876105
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\GCA_026319385.1\\genomic.gbff",
-          "relative_path": "ncbi_dataset\\data\\GCA_026319385.1\\genomic.gbff",
-          "asset_type": "genbank",
-          "size_bytes": 45987333
-        },
-        {
-          "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\GCA_026319385.1\\sequence_report.jsonl",
-          "relative_path": "ncbi_dataset\\data\\GCA_026319385.1\\sequence_report.jsonl",
-          "asset_type": "report",
-          "size_bytes": 131234
-        }
-      ]
-    }
-  ],
+  "created_at_utc": "2026-05-27T16:49:33.360728+00:00",
+  "package_dir": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1",
   "assets": [
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 4157
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\dataset_catalog.json",
-      "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-      "asset_type": "report",
-      "size_bytes": 1148
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\cds_from_genomic.fna",
-      "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\cds_from_genomic.fna",
-      "asset_type": "genomic_fasta",
-      "size_bytes": 22594718
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\GCA_001890705.1_Aspsy1_genomic.fna",
-      "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\GCA_001890705.1_Aspsy1_genomic.fna",
-      "asset_type": "genomic_fasta",
-      "size_bytes": 34822177
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
-      "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\genomic.gbff",
-      "asset_type": "genbank",
-      "size_bytes": 63401792
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
-      "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\genomic.gff",
-      "asset_type": "gff",
-      "size_bytes": 37810793
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\protein.faa",
-      "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\protein.faa",
-      "asset_type": "protein_fasta",
-      "size_bytes": 7535583
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_001890705.1\\ncbi_dataset\\data\\GCA_001890705.1\\sequence_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\GCA_001890705.1\\sequence_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 26753
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
       "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
       "asset_type": "report",
       "size_bytes": 4244
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\dataset_catalog.json",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\dataset_catalog.json",
       "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
       "asset_type": "report",
       "size_bytes": 1292
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\cds_from_genomic.fna",
       "asset_type": "genomic_fasta",
       "size_bytes": 23105958
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\GCF_001890705.1_Aspsy1_genomic.fna",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\GCF_001890705.1_Aspsy1_genomic.fna",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\GCF_001890705.1_Aspsy1_genomic.fna",
       "asset_type": "genomic_fasta",
       "size_bytes": 34822565
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\genomic.gbff",
       "asset_type": "genbank",
       "size_bytes": 65474613
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\genomic.gff",
       "asset_type": "gff",
       "size_bytes": 39219274
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\protein.faa",
       "asset_type": "protein_fasta",
       "size_bytes": 7578770
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\rna.fna",
       "asset_type": "genomic_fasta",
       "size_bytes": 22753536
     },
     {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\sequence_report.jsonl",
+      "path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCF_001890705.1\\ncbi_dataset\\data\\GCF_001890705.1\\sequence_report.jsonl",
       "relative_path": "ncbi_dataset\\data\\GCF_001890705.1\\sequence_report.jsonl",
       "asset_type": "report",
       "size_bytes": 26753
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 2347
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\dataset_catalog.json",
-      "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-      "asset_type": "report",
-      "size_bytes": 724
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\GCA_034192605.1\\GCA_034192605.1_ASM3419260v1_genomic.fna",
-      "relative_path": "ncbi_dataset\\data\\GCA_034192605.1\\GCA_034192605.1_ASM3419260v1_genomic.fna",
-      "asset_type": "genomic_fasta",
-      "size_bytes": 35361531
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\GCA_034192605.1\\genomic.gbff",
-      "relative_path": "ncbi_dataset\\data\\GCA_034192605.1\\genomic.gbff",
-      "asset_type": "genbank",
-      "size_bytes": 44256539
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_034192605.1\\ncbi_dataset\\data\\GCA_034192605.1\\sequence_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\GCA_034192605.1\\sequence_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 2381
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 2212
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\dataset_catalog.json",
-      "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-      "asset_type": "report",
-      "size_bytes": 724
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\GCA_050948135.1\\GCA_050948135.1_ASM5094813v1_genomic.fna",
-      "relative_path": "ncbi_dataset\\data\\GCA_050948135.1\\GCA_050948135.1_ASM5094813v1_genomic.fna",
-      "asset_type": "genomic_fasta",
-      "size_bytes": 35778841
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\GCA_050948135.1\\genomic.gbff",
-      "relative_path": "ncbi_dataset\\data\\GCA_050948135.1\\genomic.gbff",
-      "asset_type": "genbank",
-      "size_bytes": 44793603
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_050948135.1\\ncbi_dataset\\data\\GCA_050948135.1\\sequence_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\GCA_050948135.1\\sequence_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 5064
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\assembly_data_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 2347
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\dataset_catalog.json",
-      "relative_path": "ncbi_dataset\\data\\dataset_catalog.json",
-      "asset_type": "report",
-      "size_bytes": 726
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\GCA_026319385.1\\GCA_026319385.1_ASM2631938v1_genomic.fna",
-      "relative_path": "ncbi_dataset\\data\\GCA_026319385.1\\GCA_026319385.1_ASM2631938v1_genomic.fna",
-      "asset_type": "genomic_fasta",
-      "size_bytes": 35876105
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\GCA_026319385.1\\genomic.gbff",
-      "relative_path": "ncbi_dataset\\data\\GCA_026319385.1\\genomic.gbff",
-      "asset_type": "genbank",
-      "size_bytes": 45987333
-    },
-    {
-      "path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\raw\\GCA_026319385.1\\ncbi_dataset\\data\\GCA_026319385.1\\sequence_report.jsonl",
-      "relative_path": "ncbi_dataset\\data\\GCA_026319385.1\\sequence_report.jsonl",
-      "asset_type": "report",
-      "size_bytes": 131234
     }
-  ]
+  ],
+  "note": "Assets reflect the local NCBI genome package when present; empty means the package has not been downloaded or unpacked yet."
 }

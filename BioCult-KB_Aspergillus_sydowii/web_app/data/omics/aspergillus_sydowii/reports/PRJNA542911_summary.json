@@ -1,7 +1,19 @@
 {
   "bioproject": "PRJNA542911",
-  "runinfo_path": "C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_runinfo.csv",
-  "discovery_command": "esearch -db sra -query \"PRJNA542911[BioProject]\" | efetch -format runinfo > \"C:\\Users\\Vlad Myahlov\\Documents\\GitHub\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_runinfo.csv\"",
-  "status": "pending_runinfo_discovery",
-  "note": "Run Entrez Direct discovery to populate runinfo, then regenerate sample sheet with confirmed run accessions."
+  "run_count": 6,
+  "run_ids": [
+    "SRR9054737",
+    "SRR9054736",
+    "SRR9054733",
+    "SRR9054732",
+    "SRR9054735",
+    "SRR9054734"
+  ],
+  "total_size_MB": 13580.0,
+  "total_bases": 45317535028,
+  "runinfo_path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_runinfo.csv",
+  "sample_sheet_path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_sample_sheet.tsv",
+  "download_script_path": "D:\\Vlad Myahlov\\Python Project\\Cultivation-collagenase\\BioCult-KB_Aspergillus_sydowii\\web_app\\data\\omics\\aspergillus_sydowii\\reports\\PRJNA542911_download_reads.sh",
+  "status": "runinfo_discovered",
+  "read_download_note": "RNA-seq reads are large. Use SRA Toolkit or generated download_path values deliberately; transcriptome is a condition-specific layer, not metabolome replacement."
 }

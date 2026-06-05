@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from . import gem_cobra
+from .core import dfba_engine
 from .schemas import GemFbaInput, MediaOptimizationInput, ProcessSimulationInput
 
 
@@ -41,6 +42,30 @@ def _medium_from_state(template: MediaOptimizationInput, molasses: float, pepton
 
 
 def simulate_process(input_data: ProcessSimulationInput) -> dict:
+    try:
+        dfba_result = dfba_engine.simulate_dfba(input_data)
+        notes = [
+            "Process simulation v2 uses dFBA-style COBRA capacity, scipy.solve_ivp integration, power-law rheology, and van't Riet kLa.",
+            "Medium composition is tracked as process proxy pools for molasses carbon, organic nitrogen, and collagen substrate.",
+        ]
+        if dfba_result["degraded_mode"]:
+            notes.append("At least one dFBA step entered degraded mode; inspect solver status and substrate bounds.")
+        return {
+            "process_mode": input_data.process_mode,
+            "degraded_mode": dfba_result["degraded_mode"],
+            "fba_status": dfba_result["fba_status"],
+            "profile": dfba_result["profile"],
+            "mass_balance_equations": MASS_BALANCE_EQUATIONS
+            + [
+                "dDO/dt = kLa*(DO_sat - DO) - OUR*X/V",
+                "kLa = C*(P/V)^alpha*v_s^beta*f(viscosity)",
+                "eta = K(X, collagen)*gamma_dot^(n-1)",
+            ],
+            "notes": notes,
+        }
+    except Exception:
+        pass
+
     mode = input_data.process_mode
     dt = input_data.step_h
     medium = input_data.medium

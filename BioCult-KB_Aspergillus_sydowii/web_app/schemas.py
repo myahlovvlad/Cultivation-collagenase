@@ -221,6 +221,9 @@ class ProcessSimulationPoint(BaseModel):
     conductivity_ms_cm: float
     fba_mu_capacity_h: float
     fba_product_capacity: float
+    dfba_mu_h: Optional[float] = None
+    kLa_h: Optional[float] = None
+    OTR_mmol_l_h: Optional[float] = None
 
 
 class ProcessSimulationResult(BaseModel):
@@ -327,3 +330,118 @@ class RecommendationResult(BaseModel):
 class ImportResult(BaseModel):
     imported: dict
     warnings: Optional[List[str]] = None
+
+
+class AuditLogInput(BaseModel):
+    user: str = "system"
+    session_id: str = "default"
+    batch_id: Optional[int] = None
+    action_type: str
+    module: str = "unknown"
+    recommendation: str = ""
+    evidence: Dict[str, Any] = Field(default_factory=dict)
+    confidence: Optional[float] = Field(default=None, ge=0, le=1)
+    decision: Optional[str] = None
+    decision_reason: Optional[str] = None
+    outcome: Optional[Dict[str, Any]] = None
+
+
+class AuditRecordSchema(BaseModel):
+    id: int
+    timestamp: datetime
+    user: str
+    session_id: str
+    batch_id: Optional[int] = None
+    action_type: str
+    module: str
+    recommendation: str
+    evidence_json: str
+    confidence: Optional[float] = None
+    decision: Optional[str] = None
+    decision_reason: Optional[str] = None
+    outcome_json: Optional[str] = None
+    record_hash: str
+
+    class Config:
+        from_attributes = True
+
+
+class AuditVerifyResult(BaseModel):
+    record_id: int
+    valid: bool
+    expected_hash: str
+    record_hash: str
+
+
+class DfbaStepInput(BaseModel):
+    time_h: float = 0.0
+    dt_h: float = Field(default=12.0, gt=0, le=24)
+    medium: MediaOptimizationInput = Field(default_factory=MediaOptimizationInput)
+    biomass_g_l: float = Field(default=0.12, ge=0)
+    molasses_g_l: float = Field(default=20.0, ge=0)
+    peptone_n_g_l: Optional[float] = Field(default=None, ge=0)
+    collagen_g_l: Optional[float] = Field(default=None, ge=0)
+    product_u_ml: float = Field(default=0.0, ge=0)
+    do_percent: float = Field(default=92.0, ge=0, le=100)
+    volume_l: float = Field(default=1.7, gt=0)
+
+
+class DfbaStepResult(BaseModel):
+    status: str
+    degraded_mode: bool
+    time_h: float
+    volume_l: float
+    biomass_g_l: float
+    molasses_g_l: float
+    peptone_n_g_l: float
+    collagen_g_l: float
+    product_u_ml: float
+    pO2_percent: float
+    dfba_mu_h: float
+    qP_u_g_h: float
+    qS_g_g_h: float
+    OUR_mmol_l_h: float
+    kLa_h: float
+    OTR_mmol_l_h: float
+    fluxes: Dict[str, float]
+    warnings: List[str] = Field(default_factory=list)
+
+
+class TranscriptomeUploadInput(BaseModel):
+    dataset_id: str = Field(default="PRJNA542911_tpm", pattern=r"^[A-Za-z0-9_.-]+$")
+    csv_text: str
+    source_label: Optional[str] = "uploaded_tpm"
+
+
+class TranscriptomeFbaInput(BaseModel):
+    dataset_id: str = "PRJNA542911_tpm"
+    medium: MediaOptimizationInput = Field(default_factory=MediaOptimizationInput)
+    objective: str = Field(default="balanced", pattern=r"^(biomass|collagenolytic_product|balanced)$")
+    growth_floor: float = Field(default=0.05, ge=0, le=10)
+    threshold: float = Field(default=0.05, ge=0, le=1)
+    tpm: Optional[Dict[str, float]] = None
+
+
+class ScalingInput(BaseModel):
+    source_volume_l: float = Field(default=1.7, gt=0)
+    target_volume_l: float = Field(default=30.0, gt=0)
+    source_rpm: float = Field(default=220.0, ge=0)
+    source_vvm: float = Field(default=0.8, ge=0)
+    target_vvm: Optional[float] = Field(default=None, ge=0)
+    viscosity_mpa_s: float = Field(default=1.8, gt=0)
+
+
+class DoeInput(BaseModel):
+    n_runs: int = Field(default=12, ge=4, le=96)
+    factors: Optional[Dict[str, List[float]]] = None
+    seed: int = 42
+
+
+class ProcessEventInput(BaseModel):
+    event_type: str
+    module: str = "process"
+    user: str = "system"
+    session_id: str = "default"
+    batch_id: Optional[int] = None
+    payload: Dict[str, Any] = Field(default_factory=dict)
+    confidence: Optional[float] = Field(default=None, ge=0, le=1)

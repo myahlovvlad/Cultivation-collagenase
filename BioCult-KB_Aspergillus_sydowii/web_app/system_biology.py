@@ -120,6 +120,32 @@ def _read_dataset_summary(accession: str) -> dict[str, Any]:
     return {}
 
 
+def _read_assembly_data_report(accession: str) -> dict[str, Any]:
+    report_path = (
+        _web_app_root()
+        / "data"
+        / "omics"
+        / "aspergillus_sydowii"
+        / "raw"
+        / accession
+        / "ncbi_dataset"
+        / "data"
+        / "assembly_data_report.jsonl"
+    )
+    if not report_path.exists():
+        return {}
+    for line in report_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+        if not line.strip():
+            continue
+        try:
+            payload = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if payload.get("accession") == accession or payload.get("currentAccession") == accession:
+            return payload
+    return {}
+
+
 def _find_genomic_fasta(assembly_dir: Path, accession: str) -> Path | None:
     exact = assembly_dir / f"{accession}_Aspsy1_genomic.fna"
     if exact.exists():
@@ -240,6 +266,7 @@ def _build_category_report(assembly_dir: Path, name: str, definition: dict[str, 
 def build_genome_report(accession: str = PRIMARY_ACCESSION) -> dict[str, Any]:
     assembly_dir = locate_primary_assembly(accession)
     summary = _read_dataset_summary(accession)
+    assembly_report = _read_assembly_data_report(accession)
     genomic_fasta = _find_genomic_fasta(assembly_dir, accession)
     stats = _fasta_stats(genomic_fasta)
     files = {asset_name: assembly_dir / filename for asset_name, filename in TEXT_ASSETS.items()}
@@ -252,7 +279,12 @@ def build_genome_report(accession: str = PRIMARY_ACCESSION) -> dict[str, Any]:
     protein_count = _count_fasta_records(files["protein"])
     cds_count = _count_fasta_records(files["cds"])
     rna_count = _count_fasta_records(files["rna"])
-    gene_count = int(summary.get("Gene Count") or protein_count or 0)
+    gene_count = int(
+        summary.get("Gene Count")
+        or assembly_report.get("annotationInfo", {}).get("stats", {}).get("geneCounts", {}).get("total")
+        or protein_count
+        or 0
+    )
 
     warnings: list[str] = [
         "v1 - модель потенциала по аннотации, а не полноразмерная flux-balance GEM.",
@@ -268,10 +300,10 @@ def build_genome_report(accession: str = PRIMARY_ACCESSION) -> dict[str, Any]:
         "assembly_dir": str(assembly_dir),
         "assembly_found": assembly_dir.exists(),
         "genome_summary": {
-            "organism": summary.get("Organism Scientific Name", "Aspergillus sydowii CBS 593.65"),
-            "assembly_name": summary.get("Assembly Name", "Aspsy1"),
-            "source": summary.get("Source", "RefSeq"),
-            "level": summary.get("Level", "Scaffold"),
+            "organism": summary.get("Organism Scientific Name") or assembly_report.get("organism", {}).get("organismName", "Aspergillus sydowii CBS 593.65"),
+            "assembly_name": summary.get("Assembly Name") or assembly_report.get("assemblyInfo", {}).get("assemblyName", "Aspsy1"),
+            "source": summary.get("Source") or assembly_report.get("sourceDatabase", "RefSeq"),
+            "level": summary.get("Level") or assembly_report.get("assemblyInfo", {}).get("assemblyLevel", "Scaffold"),
             "total_bp": stats.total_bp,
             "sequence_count": stats.sequence_count,
             "n50_bp": stats.n50_bp,
