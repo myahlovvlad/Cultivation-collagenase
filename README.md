@@ -1,46 +1,27 @@
 # Cultivation-collagenase
 
-BioCult-KB is a knowledge-base and web prototype for modeling cultivation of *Aspergillus sydowii* as a producer of extracellular collagenolytic enzyme activity.
+**BioCult-KB** — это репозиторий знаний и веб-прототип для моделирования культивирования *Aspergillus sydowii* как производителя коллагенолитической активности.
 
-The project combines cultivation documentation, strain/media knowledge, analytical methods, expert rules, a FastAPI web dashboard, and a practical GEM-lite COBRA/SBML layer for process decision support.
+Проект объединяет:
+- предметную базу данных по штамму, средам, биореактору, аналитике и экспериментам;
+- FastAPI веб-приложение с интерфейсом и API для мониторинга, рекомендаций и расчетов;
+- GEM-lite COBRA/SBML модель для оценки биомассы, метаболизма и продукции;
+- процессную симуляцию batch/fed-batch/continuous;
+- OMICS-пайплайн для сборки и проверки геномных, транскриптомных и аналитических ресурсов.
 
-## What Is Included
+## Что есть в репозитории
 
-- Structured project knowledge base for strain, media, bioreactor, analytics, experimental data, models, and expert rules.
-- FastAPI web application with a Russian dashboard for cultivation monitoring and decision support.
-- Interactive 3D bioreactor scene, sensor stand, time-series visualization, and expert-system recommendations.
-- Medium optimization sliders connected to process forecasts and system-biology interpretation.
-- GEM-lite COBRApy/SBML model for *A. sydowii* with FBA endpoints.
-- Process simulation core for batch, fed-batch, and continuous cultivation modes.
-- OMICS pipeline scaffolding for genome, transcriptome, and metabolome source tracking.
-- Unit tests for system-biology evidence parsing and GEM/process simulation.
+- `BioCult-KB_Aspergillus_sydowii/` — основная база знаний, документы, модели, данные и веб-прототип.
+- `BioCult-KB_Aspergillus_sydowii/web_app/` — FastAPI backend, SQLite ORM, API, ETL и frontend-анимация.
+- `BioCult-KB_Aspergillus_sydowii/frontend/` — Vite/React интерфейс и ресурсы.
+- `BioCult-KB_Aspergillus_sydowii/tests/` — набор автоматических тестов для процесса и биологической оценки.
 
-## Repository Layout
+## Быстрый старт
 
-```text
-BioCult-KB_Aspergillus_sydowii/
-  00_project_passport/        Project scope, terminology, unresolved issues
-  01_strain/                  Strain passport, genome references, biosafety
-  02_media/                   Medium recipes and component dictionaries
-  03_cultivation_process/     Cultivation protocols and sampling plans
-  04_bioreactor/              Bioreactor geometry, sensors, calibration
-  05_analytics/               Analytical methods and calculation formulas
-  06_experimental_data/       Small curated data tables and templates
-  07_models/                  Growth, oxygen transfer, substrate and product models
-  08_expert_system/           Rules, ontology, recommendation templates
-  09_reports_and_outputs/     Reports and generated operating documents
-  tests/                      Pytest tests
-  web_app/                    FastAPI application and static dashboard
-```
-
-Large NCBI datasets, raw OMICS downloads, local SQLite databases, and cache folders are intentionally excluded from git. Recreate or unpack those files locally when needed.
-
-## Quick Start
-
-From the repository root:
+Выполните команды из корня репозитория:
 
 ```powershell
-cd BioCult-KB_Aspergillus_sydowii
+cd "BioCult-KB_Aspergillus_sydowii"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r web_app\requirements.txt
@@ -48,46 +29,43 @@ $env:PYTHONPATH = (Resolve-Path .).Path
 python -m uvicorn web_app.main:app --host 127.0.0.1 --port 8000
 ```
 
-Open:
+Откройте в браузере:
 
 ```text
 http://127.0.0.1:8000/
 ```
 
-## Key API Endpoints
+## Ключевые места
 
-- `GET /api/gem/summary` - GEM-lite/SBML status.
-- `POST /api/gem/fba` - FBA calculation for selected medium constraints.
-- `GET /api/gem/sbml` - SBML model download.
-- `POST /api/process-simulation` - process simulation for batch, fed-batch, or continuous mode.
-- `GET /api/system-biology-model` - genome evidence and process-potential report.
-- `POST /api/system-biology-model/evaluate` - condition-specific system-biology interpretation.
+- `README.md` — этот файл.
+- `INDEXATOR.md` — подробный файл-индекс с описанием функционала файлов.
+- `BioCult-KB_Aspergillus_sydowii/web_app/README.md` — инструкция по веб-приложению.
+- `BioCult-KB_Aspergillus_sydowii/09_reports_and_outputs/operation_manual.md` — руководство пользователя.
 
-## Validation
-
-Run tests from `BioCult-KB_Aspergillus_sydowii`:
+## Запуск тестов
 
 ```powershell
+cd "BioCult-KB_Aspergillus_sydowii"
 $env:PYTHONPATH = (Resolve-Path .).Path
 python -m pytest tests -q
 ```
 
-Current expected result: all tests pass.
+## Структура репозитория
 
-## Current Model Boundary
+- `00_project_passport/` — цели, задачи, терминология и проблемные зоны.
+- `01_strain/` — паспорт штамма, геномные данные, безопасность.
+- `02_media/` — рецепты сред и словари компонентов.
+- `03_cultivation_process/` — протоколы культивирования и планы отбора проб.
+- `04_bioreactor/` — спецификации биореактора, датчики и 3D-модели.
+- `05_analytics/` — методы аналитики и формулы расчетов.
+- `06_experimental_data/` — экспериментальные наборы данных и исходные материалы.
+- `07_models/` — моделирование роста, кислородного переноса, потребления и продукции.
+- `08_expert_system/` — правила, онтология и рекомендации.
+- `09_reports_and_outputs/` — отчёты, планы и операционные документы.
+- `frontend/` — статический интерфейс и стили.
+- `web_app/` — FastAPI backend и вспомогательные модули.
 
-The v1 model is a practical engineering prototype. It is not a publication-grade curated genome-scale metabolic model.
+## Примечание
 
-- GEM-lite uses proxy metabolites and proxy stoichiometry.
-- Collagenolytic activity is inferred from protease/peptidase and secretion evidence unless direct annotation is present.
-- Cell-cycle evidence is represented as an annotation layer, not as a full ODE/event simulation.
-- Process dynamics combine FBA capacity estimates with empirical kinetic assumptions.
-
-## Operating Manual
-
-The operating manual is available at:
-
-```text
-BioCult-KB_Aspergillus_sydowii/09_reports_and_outputs/operation_manual.pdf
-```
+В репозитории хранятся только подготовленные структуры и документы. Крупные данные NCBI, сырые OMICS-пакеты и временные локальные файлы не включаются автоматически.
 
