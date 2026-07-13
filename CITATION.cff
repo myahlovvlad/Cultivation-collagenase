@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use BioCult-KB in research or technical work, please cite the software using this metadata."
+title: "BioCult-KB: Collagenase Cultivation Knowledge Base"
+type: software
+authors:
+  - family-names: "Myahlov"
+    given-names: "Vlad"
+repository-code: "https://github.com/myahlovvlad/Cultivation-collagenase"
+abstract: >-
+  A scientific knowledge repository and web prototype for modelling the
+  cultivation of Aspergillus sydowii as a producer of collagenolytic activity,
+  integrating biological knowledge, process engineering, analytics, simulation,
+  and validation-oriented software structures.
+keywords:
+  - bioprocess modelling
+  - knowledge base
+  - Aspergillus sydowii
+  - collagenase
+  - laboratory informatics
+  - scientific software
+license: "NOASSERTION"
